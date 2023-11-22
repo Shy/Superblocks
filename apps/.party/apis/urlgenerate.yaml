@@ -1,0 +1,25 @@
+blocks:
+  - name: generateBullshitURL
+    step:
+      integration: python
+      python:
+        body: >+
+          import random
+
+          randomBullshit = f'https://api.netlify.com/api/v1/badges/3e50af34-b732-408f-9fd8-deecd7d00f81/deploy-status/?cachebust={random.randint(0,1000)}'
+
+          print(randomBullshit)
+
+          return randomBullshit
+
+        superblocksMetadata:
+          pluginVersion: 0.0.7
+metadata:
+  id: 65f31cac-0fa5-4e05-9c50-be5a80b04cf3
+  name: URLGenerate
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  timestamps: {}
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

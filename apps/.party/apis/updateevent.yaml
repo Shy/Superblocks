@@ -1,0 +1,86 @@
+blocks:
+  - conditional:
+      else:
+        blocks:
+          - name: uploadImage
+            step:
+              integration: ace645e4-7398-48b4-91b7-44537ae9a45d
+              restapiintegration:
+                authType: api-key
+                body: ""
+                bodyType: formData
+                fileFormKey: ""
+                fileName: ""
+                formData:
+                  - key: image
+                    value: "{{updateEventBG.files[0].readContents()}}"
+                    valueOptions: []
+                headers: []
+                httpMethod: POST
+                jsonBody: ""
+                openApiAction: genericHttpRequest
+                openApiSpecRef: ""
+                params: []
+                responseType: auto
+                urlBase: ""
+                urlPath: /3/image
+          - name: updateEventandImage
+            step:
+              integration: 57650726-5907-47e7-bf54-2d33c7a19838
+              postgres:
+                body: >-
+                  UPDATE events
+
+                  set  event={{eventNameForm.value}}, location={{eventLocationForm.value}}, description={{eventDescriptionForm.value}}, date={{eventDateForm.outputDateUtc}},week_out_message={{eventWeekSMSForm.value}}, day_out_message={{eventDaySMSForm.value}},hour_out_message={{eventHourSMSForm.value}},image_id={{uploadImage.output.data.id}}
+
+                  where id={{Event_Table.selectedRow.id}} RETURNING *;
+                filterBy: []
+                mappedColumns: []
+                operation: run_sql
+                usePreparedSql: true
+      elseIf: []
+      if:
+        blocks:
+          - name: updateEventNoImage
+            step:
+              integration: 57650726-5907-47e7-bf54-2d33c7a19838
+              postgres:
+                body: >-
+                  UPDATE events
+
+                  set  event={{eventNameForm.value}}, location={{eventLocationForm.value}}, description={{eventDescriptionForm.value}}, date={{eventDateForm.outputDateUtc}},week_out_message={{eventWeekSMSForm.value}}, day_out_message={{eventDaySMSForm.value}},hour_out_message={{eventHourSMSForm.value}}
+
+                  where id={{Event_Table.selectedRow.id}} RETURNING *;
+                filterBy: []
+                mappedColumns: []
+                operation: run_sql
+                usePreparedSql: true
+        condition: "{{updateEventBG.files.length === 0}}"
+    name: checkIfImage
+  - name: logError
+    step:
+      integration: javascript
+      javascript:
+        body: >
+          /*
+           * You can use Javascript Functions to:
+           *   1. Transform the output of previous Steps by referencing their output (ex. Step1.output)
+           *   2. Write business logic referencing UI components (ex. Table1.selectedRow.id)
+           *   3. Make http calls via axios
+           *
+           * Moment.js (moment), lodash.js (_), axios, aws-sdk, base64url, jsonwebtoken, and xmlbuilder2 libraries are currently supported.
+           */
+          console.warn('Console.warn: ' + 'No messages to send.');
+metadata:
+  description: ""
+  folder: ""
+  id: 21437fb9-49f2-4ad5-9e82-1a1bcb31919d
+  name: updateEvent
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

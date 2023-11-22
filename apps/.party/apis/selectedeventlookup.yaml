@@ -1,0 +1,28 @@
+blocks:
+  - name: lookup
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: select attendee.attendee, event_attendee_junction.rsvp,
+          event_attendee_junction.public_id, event_attendee_junction.updated_at,
+          event_attendee_junction.plus_one  from event_attendee_junction join
+          attendee on event_attendee_junction.attendee_id = attendee.id where
+          event_attendee_junction.event_id =  {{Event_Table.selectedRow.id}};
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+metadata:
+  description: ""
+  folder: ""
+  id: 8b3af756-2d7f-47d5-9747-2f26e8050770
+  name: selectedEventLookup
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options:
+      executeOnPageLoad: false

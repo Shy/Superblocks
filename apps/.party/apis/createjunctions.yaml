@@ -1,0 +1,82 @@
+blocks:
+  - name: lookupAttendees
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: >-
+          -- You can use SQL to query data (ex. SELECT * FROM orders;)
+
+          SELECT * 
+
+          FROM attendee 
+
+          WHERE NOT EXISTS 
+              (SELECT * 
+               FROM event_attendee_junction 
+               WHERE attendee.id = event_attendee_junction.attendee_id and  event_attendee_junction.event_id={{Event_Table.selectedRow.id}})
+          and attendee.invited = True
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+  - name: createNewJunction
+    parallel:
+      dynamic:
+        blocks:
+          - name: getNanoID
+            step:
+              integration: workflow
+              workflow:
+                custom: {}
+                queryParams: {}
+                workflow: c0df9702-f3ad-4d4d-bdc8-11ef9dda6f97
+          - name: junctionGen
+            step:
+              integration: 57650726-5907-47e7-bf54-2d33c7a19838
+              postgres:
+                body: >-
+                  INSERT INTO event_attendee_junction (public_id, attendee_id,
+                  event_id) 
+
+                  VALUES ({{getNanoID.output}} ,{{item.value.id}}, {{Event_Table.selectedRow.id}}) returning *;
+                filterBy: []
+                mappedColumns: []
+                operation: run_sql
+                usePreparedSql: true
+        paths: "{{lookupAttendees.output}}"
+        variables:
+          item: item
+      poolSize: 20
+      wait: WAIT_ALL
+  - conditional:
+      elseIf: []
+      if:
+        blocks:
+          - name: findShy
+            step:
+              integration: 57650726-5907-47e7-bf54-2d33c7a19838
+              postgres:
+                body: UPDATE event_attendee_junction SET rsvp = 'attending' WHERE attendee_id =
+                  'f9ed72ec-3323-46c6-854f-c20721da4022' AND event_id =
+                  {{Event_Table.selectedRow.id}} returning *;
+                filterBy: []
+                mappedColumns: []
+                operation: run_sql
+                usePreparedSql: true
+        condition: "{{lookupAttendees.output.some(obj => obj.id ===
+          'f9ed72ec-3323-46c6-854f-c20721da4022')}}"
+    name: setShyToAttending
+metadata:
+  description: ""
+  folder: ""
+  id: aa7fc38f-1c8c-4a53-9bdd-608ab80634a4
+  name: createJunctions
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options:
+      executeOnPageLoad: false

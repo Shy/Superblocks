@@ -1,0 +1,38 @@
+blocks:
+  - loop:
+      blocks:
+        - name: updateRow
+          step:
+            integration: 57650726-5907-47e7-bf54-2d33c7a19838
+            postgres:
+              body: |-
+                UPDATE attendee
+                SET attendee={{item.value.attendee}},
+                    phone = {{item.value.phone}},
+                    dietary_restrictions = {{item.value.dietary_restrictions}},
+                		invited = {{item.value.invited}}
+                WHERE id = {{item.value.id}}
+                RETURNING *
+              filterBy: []
+              mappedColumns: []
+              operation: run_sql
+              usePreparedSql: true
+      range: "{{Attendee_Table.editedRows.updatedRows}}"
+      type: TYPE_FOREACH
+      variables:
+        index: index
+        item: item
+    name: AttendeeLoop
+metadata:
+  description: ""
+  folder: ""
+  id: f27b7b11-d965-4d5a-8b03-40eb5e4098a8
+  name: updateAttendees
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

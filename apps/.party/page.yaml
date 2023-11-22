@@ -1,0 +1,3936 @@
+applicationId: d61a0b6b-1163-4406-b3f3-ad711db21979
+id: ec0a7f64-eba1-45c4-81f8-43663927fef0
+isHidden: false
+layouts:
+  - dsl:
+      apis:
+        apiMap:
+          1fbc5c89-d039-441a-b065-f365cd31fdc0:
+            dynamicTriggerPathList:
+              - key: onError
+            id: 1fbc5c89-d039-441a-b065-f365cd31fdc0
+            onError:
+              - id: 1a53d65c-6e41-4e84-88ba-62d9996b146c
+                message: "{{deleteAttendee.error}}"
+                style: error
+                type: showAlert
+          21437fb9-49f2-4ad5-9e82-1a1bcb31919d:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+            id: 21437fb9-49f2-4ad5-9e82-1a1bcb31919d
+            onError:
+              - id: c8ef9355-4765-42a3-9f14-daf8a7501482
+                message: "{{updateEvent.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - eventsLookup
+                id: v5we1nlofp
+                newWindow: true
+                type: executeApi
+          3cd34a71-ab17-46cb-9857-c896bf67e1da:
+            dynamicTriggerPathList:
+              - key: onError
+            id: 3cd34a71-ab17-46cb-9857-c896bf67e1da
+            onError:
+              - id: d6f63246-161e-4a78-b7a3-fcb504dd9ba3
+                message: "{{Leaderboard.error}}"
+                style: error
+                type: showAlert
+          65f31cac-0fa5-4e05-9c50-be5a80b04cf3:
+            dynamicTriggerPathList:
+              - key: onError
+            id: 65f31cac-0fa5-4e05-9c50-be5a80b04cf3
+            onError:
+              - id: f9e0a0f9-8f20-4b1c-8cb0-386746756dc5
+                message: "{{URLGenerate.error}}"
+                style: error
+                type: showAlert
+          6a84b0ff-5758-4113-a4c6-65f9e5370095:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+            id: 6a84b0ff-5758-4113-a4c6-65f9e5370095
+            onError:
+              - id: 6976dd65-0466-4070-a476-e50371c5be49
+                message: "{{createAttendee.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - attendeesLookup
+                id: vgpyyk0h53
+                newWindow: true
+                type: executeApi
+          7f0cc638-95c4-407f-a536-550d0a2335ba:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: 7f0cc638-95c4-407f-a536-550d0a2335ba
+            onCancel:
+              - id: jm9em0kpim
+                newWindow: true
+            onError:
+              - id: 258c3e2a-af3d-4e6c-be41-e67c65c0d4b0
+                message: "{{createEvent.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - eventsLookup
+                  - rebuildShyParty
+                id: be0v4i7hc0
+                newWindow: true
+                type: executeApi
+              - direction: close
+                id: 3en337wdle
+                name: createNewEventModal
+                newWindow: true
+                type: controlModal
+              - id: mbqay0f5fz
+                newWindow: true
+                propertyName: allChildren
+                type: resetComponent
+                widget:
+                  id: oy3mjpr2gp
+                  name: createNewEventModal
+                  type: MODAL_WIDGET
+          82cf9135-61ca-49fe-8a54-11150bd77d55:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: 82cf9135-61ca-49fe-8a54-11150bd77d55
+            onCancel:
+              - id: k093u13y9h
+                newWindow: true
+            onError:
+              - id: 287cb472-9354-40d3-abd9-7e79bcbd72f6
+                message: "{{eventsLookup.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - selectedEventLookup
+                id: 9s4tduaw98
+                newWindow: true
+                type: executeApi
+          8b3af756-2d7f-47d5-9747-2f26e8050770:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: 8b3af756-2d7f-47d5-9747-2f26e8050770
+            onCancel:
+              - id: i2mz9vjkoz
+                newWindow: true
+            onError:
+              - id: 7184f542-72e6-4eec-b818-7633ca2e9be3
+                message: "{{selectedEventLookup.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - rsvpCounts
+                id: 9bshwzd9ej
+                newWindow: true
+                type: executeApi
+              - id: ikry8dxmvo
+                newWindow: true
+          a3f7a03e-1e10-4c9c-8067-aacafdf4d31b:
+            dynamicTriggerPathList:
+              - key: onError
+            id: a3f7a03e-1e10-4c9c-8067-aacafdf4d31b
+            onError:
+              - id: 8eea393e-2995-4235-8f75-bbfc07527b4f
+                message: "{{updateAttendeeTable.error}}"
+                style: error
+                type: showAlert
+          aa7fc38f-1c8c-4a53-9bdd-608ab80634a4:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: aa7fc38f-1c8c-4a53-9bdd-608ab80634a4
+            onCancel:
+              - id: kwei6o5dfa
+                newWindow: true
+            onError:
+              - id: 40a4c301-9831-4938-b0d2-bd26b334c875
+                message: "{{createJunctions.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - selectedEventLookup
+                id: fczjwtqygr
+                newWindow: true
+                type: executeApi
+              - apiNames:
+                  - rebuildShyParty
+                id: 2m98uzbqac
+                newWindow: true
+                type: executeApi
+              - id: wix6neqdp7
+                name: updateBuildStatus
+                newWindow: true
+                type: controlTimer
+          b14eb607-a8b1-4d08-a64d-f90c9529a34f:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: b14eb607-a8b1-4d08-a64d-f90c9529a34f
+            onCancel:
+              - id: pi42su9bs8
+                newWindow: true
+            onError:
+              - id: bf1bee7f-b3ea-4e4a-912d-3333fe147b38
+                message: "{{saveRSVPBulkUpdates.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - selectedEventLookup
+                id: dfcgij9h6a
+                newWindow: true
+                type: executeApi
+          b444f915-4657-4b27-9327-c697c06ba94e:
+            dynamicTriggerPathList:
+              - key: onError
+            id: b444f915-4657-4b27-9327-c697c06ba94e
+            onError:
+              - id: f1123d50-f3ec-4a1e-95b7-7f8b9a0ae45b
+                message: "{{rsvpCounts.error}}"
+                style: error
+                type: showAlert
+          d07a846a-dcf7-4a28-bee7-af853ef6e6bb:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: d07a846a-dcf7-4a28-bee7-af853ef6e6bb
+            onCancel:
+              - id: h2x7u4lnhv
+                newWindow: true
+            onError:
+              - id: 5e8bc48e-7655-4573-8039-ccab8f40b453
+                message: "{{attendeesLookup.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - id: wc89jgjtod
+                newWindow: true
+          d918b0dd-e761-47c8-a46c-5de0b613eab7:
+            dynamicTriggerPathList:
+              - key: onError
+            id: d918b0dd-e761-47c8-a46c-5de0b613eab7
+            onError:
+              - id: e5f6bd38-38cc-40bf-be00-d5d3fa3cc069
+                message: "{{inviteUser.error}}"
+                style: error
+                type: showAlert
+          e9a78c39-40ee-461b-8c85-d5a2ee0d6617:
+            dynamicTriggerPathList:
+              - key: onError
+            id: e9a78c39-40ee-461b-8c85-d5a2ee0d6617
+            onError:
+              - id: 3d92193a-fdbf-48b4-988c-ba6c3a3378fb
+                message: "{{importPast.error}}"
+                style: error
+                type: showAlert
+          f27b7b11-d965-4d5a-8b03-40eb5e4098a8:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+              - key: onCancel
+            id: f27b7b11-d965-4d5a-8b03-40eb5e4098a8
+            onCancel:
+              - id: fhiax6iece
+                newWindow: true
+            onError:
+              - id: 47b432f3-307a-4d87-ba62-3310dd34aa13
+                message: "{{updateAttendees.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - attendeesLookup
+                id: r9ikk3a99t
+                message: ""
+                newWindow: true
+                type: executeApi
+              - id: fm3763rpyu
+                newWindow: true
+          fa0af6a3-7848-44b1-9589-ea64d6e1daea:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+            id: fa0af6a3-7848-44b1-9589-ea64d6e1daea
+            onError:
+              - id: bfc57196-c728-4c21-ad66-6bc93ae984c3
+                message: "{{deleteAttendee.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - apiNames:
+                  - attendeesLookup
+                  - selectedEventLookup
+                id: uscqeav8rv
+                newWindow: true
+                type: executeApi
+          fc394a0c-59a0-425b-bcc0-788b6b8cc9b7:
+            dynamicBindingPathList: []
+            dynamicTriggerPathList:
+              - key: onError
+              - key: onSuccess
+            id: fc394a0c-59a0-425b-bcc0-788b6b8cc9b7
+            onError:
+              - id: b8f83340-059c-4da3-a797-ad327d7581c1
+                message: "{{rebuildShyParty.error}}"
+                style: error
+                type: showAlert
+            onSuccess:
+              - id: wssa6fbhgb
+                newWindow: true
+          fdff0901-46c3-41a8-a347-f0a1f2d9fcff:
+            dynamicTriggerPathList:
+              - key: onError
+            id: fdff0901-46c3-41a8-a347-f0a1f2d9fcff
+            onError:
+              - id: 1342cc2c-5a21-4045-a228-dde29cf37ae5
+                message: "{{sendInvites.error}}"
+                style: error
+                type: showAlert
+      backgroundColor: none
+      cachedData:
+        pageLoadActions:
+          apiDeps:
+            URLGenerate: []
+            attendeesLookup: []
+            eventsLookup: []
+          apiNames:
+            - eventsLookup
+            - attendeesLookup
+            - URLGenerate
+      canExtend: true
+      children:
+        - canExtend: true
+          children:
+            - backgroundColor: none
+              canExtend: true
+              children:
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 21
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: sdk
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 75
+                  onClick:
+                    - apiNames:
+                        - rebuildShyParty
+                      id: 9h7rnc1r2z
+                      newWindow: true
+                      onSuccess:
+                        - apiNames: []
+                          id: mbopyr1hg5
+                          newWindow: true
+                          type: navigateTo
+                          url: https://app.netlify.com/sites/shyparty/deploys
+                        - apiNames:
+                            - API1
+                          id: e7vg81nv1a
+                          name: generateURL
+                          newWindow: true
+                          type: controlTimer
+                      type: executeApi
+                    - apiNames:
+                        - selectedEventLookup
+                      id: 8ben8nt7ij
+                      name: updateBuildStatus
+                      newWindow: true
+                      type: controlTimer
+                  parentId: 2cku0toazip
+                  text: Trigger Deploy
+                  top:
+                    mode: gridUnit
+                    value: 10
+                  type: BUTTON_WIDGET
+                  widgetId: 7srw8qytgz
+                  widgetName: deployButton
+                  width:
+                    mode: gridUnit
+                    value: 21
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 21
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: person_add
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 75
+                  onClick:
+                    - direction: open
+                      id: e3d2p1x6cd
+                      name: newAttendeeModal
+                      type: controlModal
+                  parentId: 2cku0toazip
+                  text: Invite new friend
+                  top:
+                    mode: gridUnit
+                    value: 18
+                  type: BUTTON_WIDGET
+                  widgetId: rikx9jhl5s
+                  widgetName: newfriendButton
+                  width:
+                    mode: gridUnit
+                    value: 21
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 21
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: calendar_add_on
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 75
+                  onClick:
+                    - direction: open
+                      id: c0hyru053s
+                      name: createNewEventModal
+                      type: controlModal
+                  parentId: 2cku0toazip
+                  text: Create New Event
+                  top:
+                    mode: gridUnit
+                    value: 14
+                  type: BUTTON_WIDGET
+                  widgetId: adktqdlf9q
+                  widgetName: createNewButton
+                  width:
+                    mode: gridUnit
+                    value: 21
+                - animateLoading: false
+                  columnOrder:
+                    - id
+                    - public_id
+                    - event
+                    - date
+                    - description
+                    - location
+                    - created_at
+                    - updated_at
+                    - image_id
+                    - day_out_message
+                    - week_out_message
+                    - customColumn2
+                    - hour_out_message
+                  columnSizeMap:
+                    date: 181.3251728395062
+                    description: 530.2572222222223
+                    event: 289.05
+                    image_id: 60
+                    location: 164
+                    public_id: 90
+                  compactMode: VERY_SHORT
+                  defaultFilters: "{}"
+                  defaultSelectedRow: "0"
+                  derivedColumns:
+                    customColumn2:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        Math.abs(moment().diff(currentRow.date, 'days')+1) })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn2
+                      index: 10
+                      isDerived: true
+                      isVisible: true
+                      label: distanceToToday
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  dynamicBindingPathList:
+                    - key: primaryColumns.id.computedValue
+                    - key: primaryColumns.id.linkUrl
+                    - key: primaryColumns.id.linkLabel
+                    - key: primaryColumns.public_id.computedValue
+                    - key: primaryColumns.public_id.linkUrl
+                    - key: primaryColumns.public_id.linkLabel
+                    - key: primaryColumns.event.computedValue
+                    - key: primaryColumns.event.linkUrl
+                    - key: primaryColumns.event.linkLabel
+                    - key: primaryColumns.date.computedValue
+                    - key: primaryColumns.date.linkUrl
+                    - key: primaryColumns.date.linkLabel
+                    - key: primaryColumns.location.computedValue
+                    - key: primaryColumns.location.linkUrl
+                    - key: primaryColumns.location.linkLabel
+                    - key: primaryColumns.description.computedValue
+                    - key: primaryColumns.description.linkUrl
+                    - key: primaryColumns.description.linkLabel
+                    - key: primaryColumns.created_at.computedValue
+                    - key: primaryColumns.created_at.linkUrl
+                    - key: primaryColumns.created_at.linkLabel
+                    - key: primaryColumns.updated_at.computedValue
+                    - key: primaryColumns.updated_at.linkUrl
+                    - key: primaryColumns.updated_at.linkLabel
+                    - key: tableData
+                    - key: primaryColumns.date.outputFormat
+                    - key: primaryColumns.image_id.computedValue
+                    - key: primaryColumns.image_id.linkUrl
+                    - key: primaryColumns.image_id.linkLabel
+                    - key: primaryColumns.event.buttonLabel
+                    - key: derivedColumns.customColumn2.computedValue
+                    - key: primaryColumns.customColumn2.computedValue
+                    - key: primaryColumns.day_out_message.computedValue
+                    - key: primaryColumns.day_out_message.linkUrl
+                    - key: primaryColumns.day_out_message.linkLabel
+                    - key: primaryColumns.week_out_message.computedValue
+                    - key: primaryColumns.week_out_message.linkUrl
+                    - key: primaryColumns.week_out_message.linkLabel
+                    - key: primaryColumns.hour_out_message.computedValue
+                    - key: primaryColumns.hour_out_message.linkUrl
+                    - key: primaryColumns.hour_out_message.linkLabel
+                    - key: primaryColumns.public_id.buttonLabel
+                  dynamicPropertyPathList:
+                    - key: primaryColumns.date.outputFormat
+                  dynamicTriggerPathList:
+                    - key: onRowClicked
+                    - key: onRowSelected
+                    - key: onSaveChanges
+                    - key: onCancelChanges
+                    - key: primaryColumns.event.onClick
+                    - key: primaryColumns.public_id.onClick
+                  gridColumns: 74
+                  height:
+                    mode: gridUnit
+                    value: 21
+                  horizontalAlignment: LEFT
+                  isDownloadable: true
+                  isFilterable: true
+                  isLoading: false
+                  isSearchable: false
+                  isVisible: true
+                  label: Data
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onCancelChanges:
+                    - id: 1ya8fpu4u2
+                      newWindow: true
+                  onRowClicked:
+                    - id: t7ejwrv6wu
+                      newWindow: true
+                  onRowSelected:
+                    - apiNames:
+                        - selectedEventLookup
+                        - rsvpCounts
+                      id: vt0j6y34oq
+                      newWindow: true
+                      type: executeApi
+                  onSaveChanges:
+                    - id: flxv60s5f6
+                      newWindow: true
+                  pageType: CLIENT_SIDE
+                  parentId: 2cku0toazip
+                  primaryColumns:
+                    created_at:
+                      columnType: date
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: created_at
+                      index: 6
+                      isDerived: false
+                      isVisible: false
+                      label: created_at
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      openInNewTab: true
+                      outputFormat: X
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    customColumn2:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        Math.abs(moment().diff(currentRow.date, 'days')+1) })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn2
+                      index: 10
+                      isDerived: true
+                      isVisible: true
+                      label: distanceToToday
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    date:
+                      columnType: date
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.date })}}"
+                      displayTimezone: US/Eastern
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: date
+                      index: 3
+                      isDerived: false
+                      isVisible: true
+                      label: date
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return currentRow.date
+                        })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return currentRow.date
+                        })}}"
+                      manageTimezone: true
+                      openInNewTab: true
+                      outputFormat: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        'ddd MMM Do h:mm a z'})}}"
+                      textSize: PARAGRAPH
+                      timezone: US/Eastern
+                      verticalAlignment: CENTER
+                      width: 150
+                    day_out_message:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: day_out_message
+                      index: 9
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: day_out_message
+                      linkLabel: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      linkUrl: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    description:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.description})}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: description
+                      index: 5
+                      isDerived: false
+                      isVisible: true
+                      label: description
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.description })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.description })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    event:
+                      buttonLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.event })}}"
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.event })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: event
+                      index: 2
+                      isDerived: false
+                      isFrozen: true
+                      isVisible: true
+                      label: event
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.event })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return currentRow.event
+                        })}}"
+                      onClick:
+                        - id: 5yolmc35qa
+                          name: eventModal
+                          newWindow: true
+                          type: controlModal
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      textWrap: false
+                      verticalAlignment: CENTER
+                      width: 150
+                    hour_out_message:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: hour_out_message
+                      index: 11
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: hour_out_message
+                      linkLabel: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      linkUrl: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    id:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.id })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: id
+                      index: 0
+                      isDerived: false
+                      isVisible: false
+                      label: id
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return currentRow.id
+                        })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return currentRow.id
+                        })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    image_id:
+                      columnType: image
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        'https://i.imgur.com/' + currentRow.image_id  +
+                        '.jpg'})}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: image_id
+                      index: 8
+                      isDerived: false
+                      isVisible: true
+                      label: Background
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.image_id })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.image_id })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    location:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.location })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: location
+                      index: 4
+                      isDerived: false
+                      isVisible: true
+                      label: location
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.location })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.location })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    public_id:
+                      buttonLabel: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        'Edit'})}}"
+                      columnType: button
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: public_id
+                      index: 1
+                      isDerived: false
+                      isVisible: true
+                      label: ""
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      onClick:
+                        - apiNames:
+                            - selectedEventLookup
+                          id: lk5y5b258o
+                          name: eventModal
+                          newWindow: true
+                          type: controlModal
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    updated_at:
+                      columnType: date
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: updated_at
+                      index: 7
+                      isDerived: false
+                      isVisible: false
+                      label: updated_at
+                      linkLabel: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      linkUrl: "{{Event_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      openInNewTab: true
+                      outputFormat: X
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    week_out_message:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: week_out_message
+                      index: 10
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: week_out_message
+                      linkLabel: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      linkUrl: "{{Event_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  searchPlaceholder: ""
+                  showColumnBorders: false
+                  tableData: "{{eventsLookup.response}}"
+                  tableHeader: ""
+                  textSize: PARAGRAPH
+                  top:
+                    mode: gridUnit
+                    value: 0
+                  type: TABLE_WIDGET
+                  verticalAlignment: CENTER
+                  widgetId: m4akx1mjmw
+                  widgetName: Event_Table
+                  width:
+                    mode: gridUnit
+                    value: 74
+                - animateLoading: false
+                  cachedColumnSettings:
+                    contact_preference:
+                      columnType: tags
+                      computedValue: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.contact_preference })}}"
+                      editInputType: DROPDOWN
+                      editMultiSelect: false
+                      editOptions: |-
+                        
+                        {{
+                        Array.from(new Set(
+                          _.flatten(
+                            Attendee_Table.tableData.map(
+                              ({ contact_preference }) => contact_preference
+                            )
+                          ) 
+                        ))
+                        }}
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: contact_preference
+                      index: 2
+                      isDerived: false
+                      isEditable: true
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: contactURL
+                      linkLabel: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.contact_preference })}}"
+                      linkUrl: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.contact_preference })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  columnOrder:
+                    - attendee
+                    - id
+                    - public_id
+                    - phone
+                    - dietary_restrictions
+                    - created_at
+                    - updated_at
+                    - invited
+                    - attendeecount
+                  columnSizeMap: {}
+                  compactMode: VERY_SHORT
+                  defaultFilters: "{}"
+                  defaultSearchText: ""
+                  defaultSelectedRow: "0"
+                  derivedColumns: {}
+                  dynamicBindingPathList:
+                    - key: tableData
+                    - key: primaryColumns.id.computedValue
+                    - key: primaryColumns.id.linkUrl
+                    - key: primaryColumns.id.linkLabel
+                    - key: primaryColumns.public_id.computedValue
+                    - key: primaryColumns.public_id.linkUrl
+                    - key: primaryColumns.public_id.linkLabel
+                    - key: primaryColumns.attendee.computedValue
+                    - key: primaryColumns.attendee.linkUrl
+                    - key: primaryColumns.attendee.linkLabel
+                    - key: primaryColumns.phone.computedValue
+                    - key: primaryColumns.phone.linkUrl
+                    - key: primaryColumns.phone.linkLabel
+                    - key: primaryColumns.dietary_restrictions.computedValue
+                    - key: primaryColumns.dietary_restrictions.linkUrl
+                    - key: primaryColumns.dietary_restrictions.linkLabel
+                    - key: primaryColumns.created_at.computedValue
+                    - key: primaryColumns.created_at.linkUrl
+                    - key: primaryColumns.created_at.linkLabel
+                    - key: primaryColumns.updated_at.computedValue
+                    - key: primaryColumns.updated_at.linkUrl
+                    - key: primaryColumns.updated_at.linkLabel
+                    - key: primaryColumns.invited.computedValue
+                    - key: primaryColumns.invited.linkUrl
+                    - key: primaryColumns.invited.linkLabel
+                    - key: primaryColumns.attendeecount.computedValue
+                    - key: primaryColumns.attendeecount.linkUrl
+                    - key: primaryColumns.attendeecount.linkLabel
+                  dynamicPropertyPathList:
+                    - key: primaryColumns.invited.buttonStyle
+                  dynamicTriggerPathList:
+                    - key: onRowClicked
+                    - key: onRowSelected
+                    - key: onSaveChanges
+                    - key: onCancelChanges
+                    - key: primaryColumns.public_id.onClick
+                  gridColumns: 96
+                  height:
+                    mode: gridUnit
+                    value: 54
+                  horizontalAlignment: LEFT
+                  isDownloadable: true
+                  isFilterable: true
+                  isLoading: false
+                  isSearchable: true
+                  isVisible: true
+                  label: Data
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onCancelChanges:
+                    - id: 1jg202f6jb
+                      newWindow: true
+                  onRowClicked:
+                    - id: 27d8yv8swq
+                      newWindow: true
+                  onRowSelected:
+                    - id: j3553n8wad
+                      newWindow: true
+                  onSaveChanges:
+                    - apiNames:
+                        - updateAttendees
+                      id: 1ec92xrc4g
+                      newWindow: true
+                      type: executeApi
+                  pageType: CLIENT_SIDE
+                  parentId: 2cku0toazip
+                  primaryColumns:
+                    attendee:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: attendee
+                      index: 2
+                      isDerived: false
+                      isEditable: true
+                      isFrozen: true
+                      isVisible: true
+                      label: attendee
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    attendeecount:
+                      columnType: percentage
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendeecount })}}"
+                      editInputType: NUMBER
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: attendeecount
+                      index: 8
+                      isDerived: false
+                      isEditable: false
+                      isVisible: true
+                      label: Attendance
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendeecount })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.attendeecount })}}"
+                      maximumFractionDigits: "2"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    created_at:
+                      columnType: date
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      editInputType: DATE
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: created_at
+                      index: 5
+                      isDerived: false
+                      isEditable: true
+                      isVisible: false
+                      label: created_at
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      openInNewTab: true
+                      outputFormat: YYYY-MM-DD HH:mm
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    dietary_restrictions:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.dietary_restrictions })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: dietary_restrictions
+                      index: 4
+                      isDerived: false
+                      isEditable: true
+                      isVisible: true
+                      label: Notes
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.dietary_restrictions })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.dietary_restrictions })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    id:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.id })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: id
+                      index: 0
+                      isDerived: false
+                      isEditable: true
+                      isVisible: false
+                      label: id
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.id })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return currentRow.id
+                        })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    invited:
+                      booleanStyleFalse: EMPTY_CHECKBOX
+                      columnType: boolean
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.invited })}}"
+                      editInputType: CHECKBOX
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: invited
+                      index: 7
+                      isDerived: false
+                      isEditable: true
+                      isVisible: true
+                      label: invited
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.invited })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.invited })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    phone:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.phone })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: phone
+                      index: 3
+                      isDerived: false
+                      isEditable: true
+                      isVisible: true
+                      label: phone
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.phone })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.phone })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    public_id:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: public_id
+                      index: 1
+                      isDerived: false
+                      isEditable: true
+                      isFrozen: false
+                      isVisible: false
+                      label: public_id
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      onClick:
+                        - apiNames:
+                            - createJunctions
+                          id: 44fcsahbay
+                          newWindow: true
+                          type: executeApi
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    updated_at:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: updated_at
+                      index: 6
+                      isDerived: false
+                      isEditable: true
+                      isVisible: false
+                      label: updated_at
+                      linkLabel: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      linkUrl: "{{Attendee_Table.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  tableData: "{{attendeesLookup.response}}"
+                  tableHeader: Attendees
+                  textSize: PARAGRAPH
+                  top:
+                    mode: gridUnit
+                    value: 75
+                  type: TABLE_WIDGET
+                  verticalAlignment: CENTER
+                  widgetId: kqs80arx3k
+                  widgetName: Attendee_Table
+                  width:
+                    mode: gridUnit
+                    value: 96
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              backgroundColor: "#F45252"
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 24
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 46
+                              onClick:
+                                - apiNames:
+                                    - deleteAttendee
+                                  id: rm5k7mctdw
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: ngwzyly2j4
+                                      name: updateAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: ndyeb9bbpz
+                              text: Delete
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: 16pkpvtw7p
+                              widgetName: deleteAttendeeButton
+                              width:
+                                mode: gridUnit
+                                value: 24
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.dietary_restrictions}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 95
+                              height:
+                                mode: gridUnit
+                                value: 11
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Dietary Restrictions.
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: ndyeb9bbpz
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 10
+                              type: INPUT_WIDGET
+                              widgetId: e365s5w59s
+                              widgetName: AttendeeDRForm
+                              width:
+                                mode: gridUnit
+                                value: 95
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.phone}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Phone Number
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: ndyeb9bbpz
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: tamia475ma
+                              widgetName: AttendeePhoneForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.attendee}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: ndyeb9bbpz
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: s6a0qeu2x8
+                              widgetName: AttendeeNameForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: ndyeb9bbpz
+                              text: Update Attendee
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: nkb6srk2fm
+                              widgetName: UpdateAttendeeHeader
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick[0].name
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 26
+                              onClick:
+                                - direction: close
+                                  id: qvtl8knwoj
+                                  name: updateAttendeeModal
+                                  type: controlModal
+                              parentId: ndyeb9bbpz
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: rebg0nymns
+                              widgetName: CancelAttendeeUpdate
+                              width:
+                                mode: gridUnit
+                                value: 19
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 24
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 71
+                              onClick:
+                                - apiNames: []
+                                  id: rm5k7mctdw
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: ngwzyly2j4
+                                      name: updateAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: ndyeb9bbpz
+                              text: Update
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: 5qmfg577d2
+                              widgetName: updateAttendeeButton
+                              width:
+                                mode: gridUnit
+                                value: 24
+                            - animateLoading: true
+                              defaultCheckedState: "{{Attendee_Table.selectedRow.invited}}"
+                              dynamicBindingPathList:
+                                - key: defaultCheckedState
+                              dynamicPropertyPathList:
+                                - key: defaultCheckedState
+                              dynamicTriggerPathList:
+                                - key: onCheckChange
+                              gridColumns: 16
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              label: Invited
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onCheckChange:
+                                - id: u8zccy2qkz
+                                  newWindow: true
+                              parentId: ndyeb9bbpz
+                              top:
+                                mode: gridUnit
+                                value: 22
+                              type: CHECKBOX_WIDGET
+                              widgetId: cg40fd1atw
+                              widgetName: AttendeeInviteForm
+                              width:
+                                mode: gridUnit
+                                value: 16
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.id}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 76
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 19
+                              onSubmit:
+                                - id: vptkjcpu3u
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 770gyol8b3
+                                  newWindow: true
+                              parentId: ndyeb9bbpz
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 22
+                              type: INPUT_WIDGET
+                              widgetId: 6zcqglke8s
+                              widgetName: idCopyPaste
+                              width:
+                                mode: gridUnit
+                                value: 76
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 31
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: 1u1raa1jnlr
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: ndyeb9bbpz
+                          widgetName: attendeeUpdateCanvas
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: gridUnit
+                        value: 31
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: qvtl8knwoj
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 1u1raa1jnlr
+                      widgetName: Body1
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: MEDIUM
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 20
+                  onClose:
+                    - apiNames: []
+                      id: g44b5p8bis
+                      newWindow: true
+                      propertyName: allChildren
+                      type: resetComponent
+                      widget:
+                        id: qvtl8knwoj
+                        name: updateAttendeeModal
+                        type: MODAL_WIDGET
+                  onOpen:
+                    - id: fma48md0uo
+                      newWindow: true
+                  parentId: 2cku0toazip
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 66
+                  type: MODAL_WIDGET
+                  widgetId: qvtl8knwoj
+                  widgetName: updateAttendeeModal
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: SMALL
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.hour_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 46
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Three Hour Out Message
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxLength: "131"
+                              onFocus:
+                                - id: 6z3jsfobwt
+                                  newWindow: true
+                              onFocusOut:
+                                - id: e7kjr8pi0g
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 36
+                              type: INPUT_WIDGET
+                              widgetId: bbmv02l0m8
+                              widgetName: eventHourSMSForm
+                              width:
+                                mode: gridUnit
+                                value: 46
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.day_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Day Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onFocus:
+                                - id: rqwtzjk8ep
+                                  newWindow: true
+                              onFocusOut:
+                                - id: u5b6x8d8jb
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 41
+                              type: INPUT_WIDGET
+                              widgetId: xjjqk8t2x8
+                              widgetName: eventDaySMSForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.week_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Week Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "256"
+                              onFocus:
+                                - id: ig9sq6pk04
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 8f9u0ofgf7
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 36
+                              type: INPUT_WIDGET
+                              widgetId: h3ftuk8taq
+                              widgetName: eventWeekSMSForm
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - allowedFileTypes: |-
+                                [
+                                  ".jpg"
+                                ]
+                              animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              files: []
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 7
+                              isLoading: false
+                              isRequired: true
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: zqv9z2yba3
+                              selectionType: 1
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: FILE_PICKER_WIDGET
+                              widgetId: cof7xhkppc
+                              widgetName: updateEventBG
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList:
+                                - key: text
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: zqv9z2yba3
+                              text: Update {{Event_Table.selectedRow.event}}
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: ectcjdipne
+                              widgetName: updateEventHeader
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 29
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 66
+                              onClick:
+                                - apiNames:
+                                    - updateEvent
+                                  id: flt57tqfac
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: bcf9d9ko0t
+                                      message: ""
+                                      name: eventModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: zqv9z2yba3
+                              text: Confirm Changes
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: BUTTON_WIDGET
+                              widgetId: q8shzakj7a
+                              widgetName: callUpdateEvent
+                              width:
+                                mode: gridUnit
+                                value: 29
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.event}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: "Title\t"
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: 2sp5ukcyyl
+                                  newWindow: true
+                              onFocusOut:
+                                - id: eae07u2q2m
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: vvsmf0hvhm
+                              widgetName: eventNameForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dateFormat: YYYY-MM-DD HH:mm
+                              datePickerType: DATE_PICKER
+                              defaultDate: "{{moment(Event_Table.selectedRow.date)}}"
+                              displayDateFormat: ddd MMM Do h:mm a z
+                              displayTimezone: US/Eastern
+                              dynamicBindingPathList:
+                                - key: defaultDate
+                              dynamicPropertyPathList:
+                                - key: defaultDate
+                                - key: displayDateFormat
+                              dynamicTriggerPathList:
+                                - key: onDateSelected
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              manageTimezone: false
+                              onDateSelected:
+                                - id: u296t0gjwc
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              timezone: US/Eastern
+                              top:
+                                mode: gridUnit
+                                value: 6
+                              twentyFourHourTime: false
+                              type: DATE_PICKER_WIDGET
+                              widgetId: kvxli779xm
+                              widgetName: eventDateForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: zqv9z2yba3
+                              text: Date
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: TEXT_WIDGET
+                              widgetId: cjrf5esovq
+                              widgetName: dateLabel
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.location}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Location
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: 8804rcyli5
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 04vc3mudxe
+                                  newWindow: true
+                              onSubmit:
+                                - id: hybibrmzzk
+                                  newWindow: true
+                              onTextChanged:
+                                - id: pzvo59d1ck
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: INPUT_WIDGET
+                              widgetId: t7re1iw5if
+                              widgetName: eventLocationForm
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.description}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 22
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Description
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: zexuktus26
+                                  newWindow: true
+                              onFocusOut:
+                                - id: wqax48xi5e
+                                  newWindow: true
+                              onSubmit:
+                                - id: nyxscit3h7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 0b5cpp2g57
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 14
+                              type: INPUT_WIDGET
+                              widgetId: rjol0tuedo
+                              widgetName: eventDescriptionForm
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 16
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              onClick:
+                                - apiNames:
+                                    - createJunctions
+                                  id: 3mikhw85c5
+                                  newWindow: true
+                                  type: executeApi
+                                - apiNames:
+                                    - selectedEventLookup
+                                  direction: close
+                                  id: xzdsh810l9
+                                  name: eventModal
+                                  newWindow: true
+                                  type: controlModal
+                              parentId: zqv9z2yba3
+                              text: Create Junctions
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: BUTTON_WIDGET
+                              widgetId: zm3s29impn
+                              widgetName: JunctionGenButton
+                              width:
+                                mode: gridUnit
+                                value: 16
+                            - animateLoading: true
+                              defaultImage: https://res.cloudinary.com/drako999/image/upload/v1589196259/default.png
+                              dynamicBindingPathList:
+                                - key: image
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              fillContainer: true
+                              gridColumns: 46
+                              height:
+                                mode: gridUnit
+                                value: 20
+                              image: "{{Event_Table.selectedRow.image_id}}"
+                              imageShape: RECTANGLE
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxZoomLevel: 1
+                              onClick:
+                                - id: 6xncu2ts0s
+                                  newWindow: true
+                              parentId: zqv9z2yba3
+                              top:
+                                mode: gridUnit
+                                value: 16
+                              type: IMAGE_WIDGET
+                              widgetId: pf38wms2i9
+                              widgetName: currentEventImage
+                              width:
+                                mode: gridUnit
+                                value: 46
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 47
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: vd40gwhlz9
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: zqv9z2yba3
+                          widgetName: Canvas1
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: gridUnit
+                        value: 47
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: suu6ptvk7q
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: vd40gwhlz9
+                      widgetName: Body2
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 0
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 0
+                  heightPreset: LARGE
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onClose:
+                    - id: 2hvgrke8g9
+                      newWindow: true
+                  onOpen:
+                    - id: ejsrtkygv2
+                      newWindow: true
+                  parentId: 2cku0toazip
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 0
+                  type: MODAL_WIDGET
+                  widgetId: suu6ptvk7q
+                  widgetName: eventModal
+                  width:
+                    mode: gridUnit
+                    value: 0
+                  widthPreset: LARGE
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].day_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Day Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: INPUT_WIDGET
+                              widgetId: q3pvq9g6fj
+                              widgetName: createNewEventDaySMS
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].hour_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Three Hour Out Message
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxLength: "131"
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 37
+                              type: INPUT_WIDGET
+                              widgetId: 1qg0h81uwp
+                              widgetName: createNewEventHourSMS
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].week_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Week Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 37
+                              type: INPUT_WIDGET
+                              widgetId: wcxm3vmf73
+                              widgetName: createNewEventWeekSMS
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].description}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 20
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Description
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: nyxscit3h7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 0b5cpp2g57
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 16
+                              type: INPUT_WIDGET
+                              widgetId: cb13k80f1g
+                              widgetName: createNewEventDescription
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].location}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Location
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: hybibrmzzk
+                                  newWindow: true
+                              onTextChanged:
+                                - id: pzvo59d1ck
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: INPUT_WIDGET
+                              widgetId: fj4unjg12a
+                              widgetName: createNewEventLocation
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: y209yotv26
+                              text: New Event
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: 9r4nocdd3q
+                              widgetName: createNewEventModel
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              onClick:
+                                - direction: close
+                                  id: oy3mjpr2gp
+                                  name: Modal1
+                                  type: controlModal
+                              parentId: y209yotv26
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 43
+                              type: BUTTON_WIDGET
+                              widgetId: zi60xtx465
+                              widgetName: cancelButton
+                              width:
+                                mode: gridUnit
+                                value: 23
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 73
+                              onClick:
+                                - apiNames:
+                                    - createEvent
+                                  id: evcw3jxlez
+                                  newWindow: true
+                                  onSuccess:
+                                    - id: 2igty4vfh2
+                                      newWindow: true
+                                  type: executeApi
+                              parentId: y209yotv26
+                              text: Confirm
+                              top:
+                                mode: gridUnit
+                                value: 43
+                              type: BUTTON_WIDGET
+                              widgetId: 3iyg8gtqxy
+                              widgetName: CreateNewEventModelButton
+                              width:
+                                mode: gridUnit
+                                value: 23
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 12
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              parentId: y209yotv26
+                              text: Date
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: TEXT_WIDGET
+                              widgetId: wqawaj4ymo
+                              widgetName: modelDateText
+                              width:
+                                mode: gridUnit
+                                value: 12
+                            - animateLoading: true
+                              dateFormat: YYYY/MM/DD HH:mm
+                              datePickerType: DATE_PICKER
+                              defaultDate: "{{moment().startOf('isoWeek').add(6, 'day').add(19,'hour')}}"
+                              dynamicBindingPathList:
+                                - key: defaultDate
+                              dynamicPropertyPathList:
+                                - key: defaultDate
+                              dynamicTriggerPathList:
+                                - key: onDateSelected
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              onDateSelected:
+                                - id: 6hzctgmk6t
+                                  newWindow: true
+                              parentId: y209yotv26
+                              top:
+                                mode: gridUnit
+                                value: 11
+                              type: DATE_PICKER_WIDGET
+                              widgetId: 4qrf6pvx9z
+                              widgetName: createNewEventDate
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].event}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 96
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Event Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: d76i9oq9im
+                                  newWindow: true
+                              onTextChanged:
+                                - id: fgx9dyo4e5
+                                  newWindow: true
+                              parentId: y209yotv26
+                              placeholderText: ""
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: ejh8ozjgm7
+                              widgetName: createNewEventName
+                              width:
+                                mode: gridUnit
+                                value: 96
+                            - allowedFileTypes: |-
+                                [
+                                  ".jpg",".HEIC"
+                                ]
+                              animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              files: []
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 19
+                              isLoading: false
+                              isRequired: true
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: y209yotv26
+                              selectionType: 1
+                              top:
+                                mode: gridUnit
+                                value: 17
+                              type: FILE_PICKER_WIDGET
+                              widgetId: 4lgfsxnivr
+                              widgetName: eventBGUpload
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: y209yotv26
+                              text: |
+                                Background
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 15
+                              type: TEXT_WIDGET
+                              verticalAlign: AUTO
+                              widgetId: 7sllnvszwd
+                              widgetName: Text10
+                              width:
+                                mode: gridUnit
+                                value: 48
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 47
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: 97hp5tp04g
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: y209yotv26
+                          widgetName: Canvas2
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: gridUnit
+                        value: 47
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: oy3mjpr2gp
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 97hp5tp04g
+                      widgetName: Body3
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: LARGE
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onClose:
+                    - id: vtxah7upec
+                      newWindow: true
+                  onOpen:
+                    - id: p151hh9443
+                      newWindow: true
+                  parentId: 2cku0toazip
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 2
+                  type: MODAL_WIDGET
+                  widgetId: oy3mjpr2gp
+                  widgetName: createNewEventModal
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: LARGE
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 95
+                              height:
+                                mode: gridUnit
+                                value: 11
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Dietary Restrictions.
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: zs10uv1hp7
+                                  newWindow: true
+                              onFocusOut:
+                                - id: vstthdjm6j
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 4c0xbr6q3f
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 8
+                              type: INPUT_WIDGET
+                              widgetId: mt4wtijtju
+                              widgetName: createNewAttendeeDietaryRestr
+                              width:
+                                mode: gridUnit
+                                value: 95
+                            - animateLoading: true
+                              customErrorMessage: e.164 format please.
+                              customValidationRule: "{{/^\\+[1-9]\\d{1,14}$/.test(createNewAttendeePhone.valu\
+                                e)}}"
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: customValidationRule
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Phone Number
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              onFocus:
+                                - id: qr85ax7dp2
+                                  newWindow: true
+                              onFocusOut:
+                                - id: vx5oyxxa58
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 4c0xbr6q3f
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 3
+                              type: INPUT_WIDGET
+                              widgetId: qfjws735va
+                              widgetName: createNewAttendeePhone
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: dkcqrm750d
+                                  newWindow: true
+                              onFocusOut:
+                                - id: ui4jdcmq9x
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 4c0xbr6q3f
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 3
+                              type: INPUT_WIDGET
+                              widgetId: sc3zw32enq
+                              widgetName: createNewAttendeeName
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: 4c0xbr6q3f
+                              text: Invite New Friend
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: 5yaws1gg4q
+                              widgetName: Text2
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              gridColumns: 20
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 53
+                              onClick:
+                                - direction: close
+                                  id: sjagj4ke9m
+                                  name: Modal2
+                                  type: controlModal
+                              parentId: 4c0xbr6q3f
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 19
+                              type: BUTTON_WIDGET
+                              widgetId: 6lzgpfrco4
+                              widgetName: Button3
+                              width:
+                                mode: gridUnit
+                                value: 20
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList:
+                                - key: isDisabled
+                              dynamicPropertyPathList:
+                                - key: isDisabled
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 20
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: "{{!createNewAttendeePhone.isValid}}"
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 74
+                              onClick:
+                                - apiNames:
+                                    - createAttendee
+                                  id: zl6k3pykzs
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: r6haq413nu
+                                      name: newAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: 4c0xbr6q3f
+                              text: Confirm
+                              top:
+                                mode: gridUnit
+                                value: 19
+                              type: BUTTON_WIDGET
+                              widgetId: alt772mgs6
+                              widgetName: createNewAttendeeButton
+                              width:
+                                mode: gridUnit
+                                value: 20
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 22
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: 21eeo4w9clw
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: 4c0xbr6q3f
+                          widgetName: Canvas3
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: gridUnit
+                        value: 22
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: sjagj4ke9m
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 21eeo4w9clw
+                      widgetName: Body4
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: SMALL
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 13
+                  onClose:
+                    - id: qtjyxt15vj
+                      newWindow: true
+                  onOpen:
+                    - id: qsyjfkztau
+                      newWindow: true
+                  parentId: 2cku0toazip
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 2
+                  type: MODAL_WIDGET
+                  widgetId: sjagj4ke9m
+                  widgetName: newAttendeeModal
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: SMALL
+                - animateLoading: false
+                  cachedColumnSettings:
+                    contact_preference:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.contact_preference })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: contact_preference
+                      index: 1
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: false
+                      label: contact_preference
+                      linkLabel: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.contact_preference })}}"
+                      linkUrl: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.contact_preference })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    phone:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.phone })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: phone
+                      index: 2
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: false
+                      label: phone
+                      linkLabel: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.phone })}}"
+                      linkUrl: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.phone })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  columnOrder:
+                    - attendee
+                    - plus_one
+                    - rsvp
+                    - updated_at
+                    - public_id
+                    - customColumn1
+                    - customColumn3
+                  columnSizeMap:
+                    customColumn2: 150.96296296296296
+                    rsvp: 132.33333333333331
+                  compactMode: VERY_SHORT
+                  defaultFilters: "{}"
+                  defaultSelectedRow: "0"
+                  defaultSort:
+                    asc: false
+                    column: updated_at
+                  derivedColumns:
+                    customColumn1:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn1
+                      index: 4
+                      isDerived: true
+                      isVisible: true
+                      label: Public ID
+                      linkLabel: ""
+                      linkUrl: ""
+                      onClick:
+                        - apiNames:
+                            - selectedEventLookup
+                          id: r2u4fti09v
+                          newWindow: true
+                          type: executeApi
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    customColumn3:
+                      columnType: email
+                      computedValue: '{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return ("shy@superblocks.com")})}}'
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn3
+                      index: 8
+                      isDerived: true
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: email
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  dynamicBindingPathList:
+                    - key: tableData
+                    - key: primaryColumns.rsvp.computedValue
+                    - key: primaryColumns.rsvp.linkUrl
+                    - key: primaryColumns.rsvp.linkLabel
+                    - key: primaryColumns.attendee.computedValue
+                    - key: primaryColumns.attendee.linkUrl
+                    - key: primaryColumns.attendee.linkLabel
+                    - key: primaryColumns.public_id.computedValue
+                    - key: primaryColumns.public_id.linkUrl
+                    - key: primaryColumns.public_id.linkLabel
+                    - key: primaryColumns.updated_at.computedValue
+                    - key: primaryColumns.updated_at.linkUrl
+                    - key: primaryColumns.updated_at.linkLabel
+                    - key: derivedColumns.customColumn1.computedValue
+                    - key: primaryColumns.customColumn1.computedValue
+                    - key: primaryColumns.updated_at.outputFormat
+                    - key: tableHeader
+                    - key: primaryColumns.rsvp.editOptions
+                    - key: derivedColumns.customColumn3.computedValue
+                    - key: primaryColumns.customColumn3.computedValue
+                    - key: primaryColumns.plus_one.computedValue
+                    - key: primaryColumns.plus_one.linkUrl
+                    - key: primaryColumns.plus_one.linkLabel
+                  dynamicPropertyPathList:
+                    - key: primaryColumns.updated_at.outputFormat
+                  dynamicTriggerPathList:
+                    - key: onRowClicked
+                    - key: onSaveChanges
+                    - key: onCancelChanges
+                    - key: primaryColumns.customColumn1.onClick
+                    - key: primaryColumns.rsvp.onDropdownSearchTextChanged
+                  enableRowDeletion: true
+                  gridColumns: 96
+                  height:
+                    mode: gridUnit
+                    value: 43
+                  horizontalAlignment: LEFT
+                  isDownloadable: true
+                  isFilterable: true
+                  isLoading: false
+                  isSearchable: true
+                  isVisible: true
+                  label: Data
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onCancelChanges:
+                    - id: 53m1vievmd
+                      newWindow: true
+                  onRowClicked:
+                    - id: nzkldjxljv
+                      newWindow: true
+                  onSaveChanges:
+                    - apiNames:
+                        - saveRSVPBulkUpdates
+                      id: t20wuujbz3
+                      newWindow: true
+                      type: executeApi
+                  pageType: CLIENT_SIDE
+                  parentId: 2cku0toazip
+                  primaryColumns:
+                    attendee:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: attendee
+                      index: 0
+                      isDerived: false
+                      isEditable: false
+                      isFrozen: true
+                      isVisible: true
+                      label: attendee
+                      linkLabel: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      linkUrl: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.attendee })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    customColumn1:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn1
+                      index: 4
+                      isDerived: true
+                      isEditable: false
+                      isVisible: false
+                      label: Public ID
+                      linkLabel: ""
+                      linkUrl: ""
+                      onClick:
+                        - apiNames: []
+                          id: r2u4fti09v
+                          newWindow: true
+                          type: executeApi
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    customColumn3:
+                      columnType: email
+                      computedValue: '{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return ("shy@superblocks.com")})}}'
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn3
+                      index: 8
+                      isDerived: true
+                      isEditableOnInsertion: true
+                      isVisible: false
+                      label: email
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    plus_one:
+                      columnType: text
+                      computedValue: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.plus_one })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: plus_one
+                      index: 1
+                      isDerived: false
+                      isEditable: true
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: "+1"
+                      linkLabel: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.plus_one })}}"
+                      linkUrl: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.plus_one })}}"
+                      notation: standard
+                      openInNewTab: true
+                      tagDisplayConfig: {}
+                      textSize: PARAGRAPH
+                      useLabelAsDisplayValue: true
+                      verticalAlignment: CENTER
+                      width: 150
+                    public_id:
+                      columnType: link
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      editInputType: TEXT
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: public_id
+                      index: 2
+                      isDerived: false
+                      isEditable: false
+                      isVisible: true
+                      label: Link
+                      linkLabel: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        Global.profiles.selected.key.replace(/_/g,
+                        '.')+\"/rsvp/\" + currentRow.public_id + '/'})}}"
+                      linkUrl: "{{selectedEventTable.tableData.map((currentRow) => { return 'https://'
+                        + Global.profiles.selected.key.replace(/_/g,
+                        '.')+\"/rsvp/\" + currentRow.public_id + '/'})}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    rsvp:
+                      booleanStyleFalse: EMPTY_CHECKBOX
+                      columnType: tags
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.rsvp})}}"
+                      editInputType: DROPDOWN
+                      editIsRequired: false
+                      editMultiSelect: false
+                      editOptions: |-
+                        {{["attending", "not_attending", "maybe"
+                        ]}}
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: rsvp
+                      index: 4
+                      isDerived: false
+                      isEditable: true
+                      isVisible: true
+                      label: rsvp
+                      linkLabel: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.rsvp })}}"
+                      linkUrl: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.rsvp })}}"
+                      onDropdownSearchTextChanged:
+                        - id: j55vf0kqg4
+                          newWindow: true
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    updated_at:
+                      columnType: date
+                      computedValue: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      editInputType: DATE
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: updated_at
+                      index: 3
+                      isDerived: false
+                      isEditable: false
+                      isVisible: true
+                      label: Update Time
+                      linkLabel: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      linkUrl: "{{selectedEventTable.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      openInNewTab: true
+                      outputFormat: "{{selectedEventTable.tableData.map((currentRow) => { return 'MMM
+                        Mo hh:mm a z'})}}"
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  tableData: "{{selectedEventLookup.response}}"
+                  tableHeader: "{{Event_Table.selectedRow.event}} RSVPs"
+                  textSize: PARAGRAPH
+                  top:
+                    mode: gridUnit
+                    value: 31
+                  type: TABLE_WIDGET
+                  verticalAlignment: CENTER
+                  widgetId: n0rqrj6cpe
+                  widgetName: selectedEventTable
+                  width:
+                    mode: gridUnit
+                    value: 96
+                - children:
+                    - backgroundColor: none
+                      canExtend: true
+                      children:
+                        - animateLoading: false
+                          dynamicBindingPathList:
+                            - key: text
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 72
+                          parentId: cznxobj1d7
+                          text: "{{rsvpCounts.response.null}}"
+                          textAlign: CENTER
+                          textColor: "#643ADF"
+                          textStyle: HEADING_1
+                          textType: number
+                          top:
+                            mode: gridUnit
+                            value: 3
+                          type: TEXT_WIDGET
+                          widgetId: idpq6u90no
+                          widgetName: tdbCount
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: false
+                          dynamicBindingPathList:
+                            - key: text
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 48
+                          parentId: cznxobj1d7
+                          text: "{{rsvpCounts.response.not_attending}}"
+                          textAlign: CENTER
+                          textColor: "#F45252"
+                          textStyle: HEADING_1
+                          textType: number
+                          top:
+                            mode: gridUnit
+                            value: 3
+                          type: TEXT_WIDGET
+                          widgetId: spumc9lcqv
+                          widgetName: Text9
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: false
+                          dynamicBindingPathList:
+                            - key: text
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 24
+                          parentId: cznxobj1d7
+                          text: "{{rsvpCounts.response.maybe}}"
+                          textAlign: CENTER
+                          textColor: "#FF9F35"
+                          textStyle: HEADING_1
+                          textType: number
+                          top:
+                            mode: gridUnit
+                            value: 3
+                          type: TEXT_WIDGET
+                          widgetId: o7vb4cr2lr
+                          widgetName: maybeCount
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          icon: directions_run
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          parentId: cznxobj1d7
+                          text: Going
+                          textAlign: CENTER
+                          textStyle: LABEL
+                          textType: text
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: TEXT_WIDGET
+                          widgetId: 83gno59rmt
+                          widgetName: Text6
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          icon: question_exchange
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 72
+                          parentId: cznxobj1d7
+                          text: TBD
+                          textAlign: CENTER
+                          textStyle: LABEL
+                          textType: text
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: TEXT_WIDGET
+                          widgetId: f1rgrlas5d
+                          widgetName: Text5
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          icon: sentiment_sad
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 48
+                          parentId: cznxobj1d7
+                          text: Can't go.
+                          textAlign: CENTER
+                          textStyle: LABEL
+                          textType: text
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: TEXT_WIDGET
+                          widgetId: 7nyr1f0xwi
+                          widgetName: Text4
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          icon: psychology_alt
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 24
+                          parentId: cznxobj1d7
+                          text: Maybe
+                          textAlign: CENTER
+                          textStyle: LABEL
+                          textType: text
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: TEXT_WIDGET
+                          widgetId: vazyahbxoj
+                          widgetName: Text3
+                          width:
+                            mode: gridUnit
+                            value: 23
+                        - animateLoading: false
+                          dynamicBindingPathList:
+                            - key: text
+                          dynamicTriggerPathList: []
+                          gridColumns: 23
+                          height:
+                            mode: gridUnit
+                            value: 3
+                          isLoading: false
+                          isVisible: true
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          parentId: cznxobj1d7
+                          text: "{{rsvpCounts.response.attending}}+{{rsvpCounts.response.plusOne}} "
+                          textAlign: CENTER
+                          textColor: "#14CDB7"
+                          textStyle: HEADING_1
+                          textType: text
+                          top:
+                            mode: gridUnit
+                            value: 3
+                          type: TEXT_WIDGET
+                          widgetId: g1yitdmypv
+                          widgetName: goingCount
+                          width:
+                            mode: gridUnit
+                            value: 23
+                      containerStyle: none
+                      detachFromLayout: true
+                      dynamicBindingPathList: []
+                      dynamicTriggerPathList: []
+                      gridColumns: 96
+                      height:
+                        mode: gridUnit
+                        value: 8
+                      isLoading: false
+                      isVisible: true
+                      layout: FIXED_GRID
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      minHeight:
+                        mode: px
+                        value: 96
+                      parentId: 0da8k9b0ud
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: CANVAS_WIDGET
+                      widgetId: cznxobj1d7
+                      widgetName: Canvas4
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  containerStyle: card
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList: []
+                  gridColumns: 96
+                  height:
+                    mode: gridUnit
+                    value: 8
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  parentId: 2cku0toazip
+                  shouldScrollContents: false
+                  top:
+                    mode: gridUnit
+                    value: 22
+                  type: CONTAINER_WIDGET
+                  widgetId: 0da8k9b0ud
+                  widgetName: attendeeCountContainer
+                  width:
+                    mode: gridUnit
+                    value: 96
+                - animateLoading: true
+                  defaultOptionValue: "{{Global.profiles.selected.id}}"
+                  dynamicBindingPathList:
+                    - key: options
+                    - key: defaultOptionValue
+                  dynamicTriggerPathList:
+                    - key: onOptionChange
+                    - key: onClear
+                  gridColumns: 21
+                  height:
+                    mode: gridUnit
+                    value: 6
+                  isLoading: false
+                  isRequired: false
+                  isVertical: true
+                  isVisible: true
+                  label: Site
+                  left:
+                    mode: gridUnit
+                    value: 75
+                  onClear:
+                    - id: 4lf5gtft4r
+                      newWindow: true
+                  onOptionChange:
+                    - apiNames:
+                        - selectedEventLookup
+                      id: thwpdw8unw
+                      newWindow: true
+                      profileId: "{{profileMode.selectedOptionValue}}"
+                      type: setProfile
+                    - apiNames:
+                        - eventsLookup
+                        - selectedEventLookup
+                        - rsvpCounts
+                        - attendeesLookup
+                      id: 5o974at0hx
+                      newWindow: true
+                      type: executeApi
+                  options: "{{Global.profiles.available}}"
+                  parentId: 2cku0toazip
+                  placeholderText: Select an option
+                  top:
+                    mode: gridUnit
+                    value: 0
+                  transformation:
+                    label: displayName
+                    value: id
+                  type: DROP_DOWN_WIDGET
+                  widgetId: krflvyki91
+                  widgetName: profileMode
+                  width:
+                    mode: gridUnit
+                    value: 21
+                - animateLoading: false
+                  defaultImage: https://res.cloudinary.com/drako999/image/upload/v1589196259/default.png
+                  dynamicBindingPathList:
+                    - key: image
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  fillContainer: true
+                  gridColumns: 21
+                  height:
+                    mode: gridUnit
+                    value: 2
+                  image: "{{URLGenerate.response}}"
+                  imageShape: RECTANGLE
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 75
+                  maxZoomLevel: 1
+                  onClick:
+                    - apiNames:
+                        - URLGenerate
+                      id: vc4hw8nllo
+                      newWindow: true
+                      type: navigateTo
+                      url: https://app.netlify.com/sites/shyparty/deploys
+                  parentId: 2cku0toazip
+                  top:
+                    mode: gridUnit
+                    value: 7
+                  type: IMAGE_WIDGET
+                  widgetId: vc1n3y6v45
+                  widgetName: netlifyStatus
+                  width:
+                    mode: gridUnit
+                    value: 21
+              containerStyle: none
+              detachFromLayout: true
+              dynamicBindingPathList: []
+              dynamicTriggerPathList: []
+              gridColumns: 96
+              height:
+                mode: gridUnit
+                value: 134
+              layout: FIXED_GRID
+              left:
+                mode: gridUnit
+                value: 0
+              minHeight:
+                mode: px
+                value: 1292
+              parentId: lm2jrimm2x
+              top:
+                mode: gridUnit
+                value: 0
+              type: CANVAS_WIDGET
+              widgetId: 2cku0toazip
+              widgetName: Canvas5
+              width:
+                mode: gridUnit
+                value: 0
+          detachFromLayout: true
+          dragDisabled: true
+          gridColumns: 96
+          height:
+            mode: gridUnit
+            value: 99
+          isLoading: false
+          isVisible: true
+          left:
+            mode: gridUnit
+            value: 0
+          parentId: "0"
+          shouldScrollContents: true
+          top:
+            mode: gridUnit
+            value: 0
+          type: SECTION_WIDGET
+          widgetId: lm2jrimm2x
+          widgetName: Section1
+          width:
+            mode: gridUnit
+            value: 96
+      detachFromLayout: true
+      dynamicBindingPathList: []
+      gridColumns: 96
+      height:
+        mode: gridUnit
+        value: 99
+      left:
+        mode: gridUnit
+        value: 0
+      stateVars:
+        stateVarMap:
+          b2c348d6-4473-4d2e-bdf2-fcba500154d7:
+            createdAt: 1674575513572
+            defaultValue: ""
+            id: b2c348d6-4473-4d2e-bdf2-fcba500154d7
+            name: Counts
+            persistance: Temporary
+          e56c1833-9851-4b11-aeb3-14148759da83:
+            createdAt: 1674234519155
+            defaultValue: https://api.netlify.com/api/v1/badges/3e50af34-b732-408f-9fd8-deecd7d00f81/deploy-status
+            dynamicBindingPathList: []
+            dynamicTriggerPathList: []
+            id: e56c1833-9851-4b11-aeb3-14148759da83
+            name: netlifyURL
+            persistance: Temporary
+      timers:
+        timerMap:
+          92320fd3-d553-4262-8318-6c559eea9dac:
+            createdAt: 1676406135090
+            dynamicTriggerPathList:
+              - key: steps
+            id: 92320fd3-d553-4262-8318-6c559eea9dac
+            intervalMs: 5000
+            name: updateBuildStatus
+            startOnPageLoad: false
+            steps:
+              - apiNames:
+                  - URLGenerate
+                id: l14vam0nx9
+                newWindow: true
+                type: executeApi
+          f68cee02-d8a9-4d5d-956f-0af76646cf39:
+            createdAt: 1695057453641
+            dynamicTriggerPathList:
+              - key: steps
+            id: f68cee02-d8a9-4d5d-956f-0af76646cf39
+            intervalMs: 5000
+            name: updateLookup
+            startOnPageLoad: true
+            steps:
+              - apiNames:
+                  - selectedEventLookup
+                id: pbov006rmz
+                newWindow: true
+                type: executeApi
+      top:
+        mode: gridUnit
+        value: 0
+      type: PAGE_WIDGET
+      version: 8
+      widgetId: "0"
+      widgetName: Page
+      width:
+        mode: gridUnit
+        value: 0
+    id: 605ed855-551e-4d01-b6e4-2feac9a04289
+name: Page1

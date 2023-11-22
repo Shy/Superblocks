@@ -1,0 +1,35 @@
+blocks:
+  - name: getNanoID
+    step:
+      integration: workflow
+      workflow:
+        custom: {}
+        queryParams: {}
+        superblocksMetadata:
+          pluginVersion: 0.0.4
+        workflow: c0df9702-f3ad-4d4d-bdc8-11ef9dda6f97
+  - name: createNewPerson
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: INSERT INTO "public"."attendee"("public_id","attendee",
+          "phone",  "dietary_restrictions") VALUES({{getNanoID.output}},
+          {{createNewAttendeeName.value}}, {{createNewAttendeePhone.value}},
+          {{createNewAttendeeDietaryRestr.value}}) RETURNING *;
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+metadata:
+  description: ""
+  folder: ""
+  id: 6a84b0ff-5758-4113-a4c6-65f9e5370095
+  name: createAttendee
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

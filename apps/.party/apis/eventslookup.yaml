@@ -1,0 +1,31 @@
+blocks:
+  - name: getAllEvents
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: |-
+          SELECT * 
+          FROM events 
+          ORDER BY 
+              CASE 
+                  WHEN date >= CURRENT_DATE THEN 0 
+                  ELSE 1 
+              END, 
+              date DESC;
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+metadata:
+  description: ""
+  folder: ""
+  id: 82cf9135-61ca-49fe-8a54-11150bd77d55
+  name: eventsLookup
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

@@ -1,0 +1,28 @@
+blocks:
+  - name: triggerDeploy
+    step:
+      integration: 6d5b48b4-a691-488d-96d4-308f2269cf3e
+      restapiintegration:
+        authType: None
+        bodyType: jsonBody
+        fileFormKey: file
+        httpMethod: POST
+        responseType: auto
+        superblocksMetadata:
+          pluginVersion: 0.0.12
+  - name: returnTrue
+    step:
+      integration: python
+      python:
+        body: return True
+        superblocksMetadata:
+          pluginVersion: 0.0.7
+metadata:
+  id: fc394a0c-59a0-425b-bcc0-788b6b8cc9b7
+  name: rebuildShyParty
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  timestamps: {}
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

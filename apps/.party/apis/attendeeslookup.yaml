@@ -1,0 +1,93 @@
+blocks:
+  - name: sqlQueries
+    parallel:
+      poolSize: 20
+      static:
+        paths:
+          getAttendees:
+            blocks:
+              - name: getAttendees
+                step:
+                  integration: 57650726-5907-47e7-bf54-2d33c7a19838
+                  postgres:
+                    body: >
+                      -- You can use SQL to query data (ex. SELECT * FROM
+                      orders;)
+
+                      SELECT
+                          attendee.*,
+                          COUNT(CASE 
+                              WHEN event_attendee_junction.rsvp = 'attending' THEN 1 
+                          END) as attendeeCount  
+                      FROM
+                          event_attendee_junction   
+                      LEFT JOIN
+                          attendee   
+                              ON  attendee.id = event_attendee_junction.attendee_id 
+                              AND attendee.id != 'f9ed72ec-3323-46c6-854f-c20721da4022'
+
+                      GROUP BY
+                          (attendee.id)
+                    filterBy: []
+                    mappedColumns: []
+                    operation: run_sql
+                    usePreparedSql: true
+          getEventCount:
+            blocks:
+              - name: getEventCount
+                step:
+                  integration: 57650726-5907-47e7-bf54-2d33c7a19838
+                  postgres:
+                    body: >-
+                      -- You can use SQL to query data (ex. SELECT * FROM
+                      orders;)
+
+
+                      select count(events.events) from events where events.date <= current_date;
+                    filterBy: []
+                    mappedColumns: []
+                    operation: run_sql
+                    usePreparedSql: true
+      wait: WAIT_ALL
+  - name: formatData
+    step:
+      integration: python
+      python:
+        body: "outputArray = []
+
+          outputDict  = {}
+
+
+          for attendee in sqlQueries.output.getAttendees:
+
+          \    if attendee.attendee:
+
+          \        outputDict = attendee
+
+          \        outputDict['attendeecount']
+          =     int(outputDict['attendeecount'])/
+          int(sqlQueries.output.getEventCount[0].count)
+
+          \        outputArray.append(outputDict)
+
+          outputArray.sort(key=lambda x: (-x['invited'],
+          -x['attendeecount']))
+
+          return outputArray
+
+          \ "
+        superblocksMetadata:
+          pluginVersion: 0.0.7
+metadata:
+  description: ""
+  folder: ""
+  id: d07a846a-dcf7-4a28-bee7-af853ef6e6bb
+  name: attendeesLookup
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}

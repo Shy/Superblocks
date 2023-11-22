@@ -1,0 +1,56 @@
+blocks:
+  - loop:
+      blocks:
+        - name: updateQuery
+          step:
+            integration: 57650726-5907-47e7-bf54-2d33c7a19838
+            postgres:
+              body: >-
+                update event_attendee_junction
+                   set rsvp = {{item.value.rsvp}}, plus_one = {{item.value.plus_one}}
+                where event_attendee_junction.public_id = {{item.value.public_id}} returning *;
+              filterBy: []
+              mappedColumns: []
+              operation: run_sql
+              usePreparedSql: true
+      range: "{{selectedEventTable.editedRows.updatedRows}}"
+      type: TYPE_FOREACH
+      variables:
+        index: index
+        item: item
+    name: attendeeUpdate
+  - loop:
+      blocks:
+        - name: deleteJunction
+          step:
+            integration: 57650726-5907-47e7-bf54-2d33c7a19838
+            postgres:
+              body: >-
+                -- You can use SQL to query data (ex. SELECT * FROM orders;)
+
+
+                DELETE FROM event_attendee_junction WHERE public_id = {{item.value.public_id}};
+              filterBy: []
+              mappedColumns: []
+              operation: run_sql
+              usePreparedSql: true
+      range: "{{selectedEventTable.editedRows.deletedRows}}"
+      type: TYPE_FOREACH
+      variables:
+        index: index
+        item: item
+    name: removeJunctions
+metadata:
+  description: ""
+  folder: ""
+  id: b14eb607-a8b1-4d08-a64d-f90c9529a34f
+  name: saveRSVPBulkUpdates
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options:
+      executeOnPageLoad: false

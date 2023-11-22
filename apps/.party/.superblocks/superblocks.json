@@ -1,0 +1,20 @@
+{
+  "apis": {
+    "21437fb9-49f2-4ad5-9e82-1a1bcb31919d": "updateEvent",
+    "65f31cac-0fa5-4e05-9c50-be5a80b04cf3": "URLGenerate",
+    "6a84b0ff-5758-4113-a4c6-65f9e5370095": "createAttendee",
+    "7f0cc638-95c4-407f-a536-550d0a2335ba": "createEvent",
+    "82cf9135-61ca-49fe-8a54-11150bd77d55": "eventsLookup",
+    "8b3af756-2d7f-47d5-9747-2f26e8050770": "selectedEventLookup",
+    "aa7fc38f-1c8c-4a53-9bdd-608ab80634a4": "createJunctions",
+    "b14eb607-a8b1-4d08-a64d-f90c9529a34f": "saveRSVPBulkUpdates",
+    "b444f915-4657-4b27-9327-c697c06ba94e": "rsvpCounts",
+    "d07a846a-dcf7-4a28-bee7-af853ef6e6bb": "attendeesLookup",
+    "f27b7b11-d965-4d5a-8b03-40eb5e4098a8": "updateAttendees",
+    "fa0af6a3-7848-44b1-9589-ea64d6e1daea": "deleteAttendee",
+    "fc394a0c-59a0-425b-bcc0-788b6b8cc9b7": "rebuildShyParty"
+  },
+  "configType": "APPLICATION",
+  "defaultPageId": "ec0a7f64-eba1-45c4-81f8-43663927fef0",
+  "id": "d61a0b6b-1163-4406-b3f3-ad711db21979"
+}

@@ -1,0 +1,65 @@
+blocks:
+  - name: getCounts
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: |-
+          -- You can use SQL to query data (ex. SELECT * FROM orders;)
+
+          SELECT
+              ea.rsvp,
+              COUNT(*) AS "rsvp_status"
+          FROM
+              event_attendee_junction ea
+          JOIN
+              attendee a ON ea.attendee_id = a.id
+          WHERE
+              ea.event_id = {{Event_Table.selectedRow.id}}  
+              AND a.invited = true
+          GROUP BY
+              ea.rsvp;
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+  - name: getPlusOne
+    step:
+      integration: 57650726-5907-47e7-bf54-2d33c7a19838
+      postgres:
+        body: |-
+          SELECT sum(plus_one) as plus
+          FROM event_attendee_junction
+          WHERE event_id = {{Event_Table.selectedRow.id}};
+        filterBy: []
+        mappedColumns: []
+        operation: run_sql
+        usePreparedSql: true
+  - name: formatData
+    step:
+      integration: python
+      python:
+        body: >-
+          output =
+          {"attending":0,"maybe":0,None:0,"not_attending":0,"plusOne":getPlusOne.output[0].plus}
+
+
+
+          for item in getCounts.output:
+              output[item['rsvp']] = item['rsvp_status']
+          return output
+        superblocksMetadata:
+          pluginVersion: 0.0.7
+metadata:
+  description: ""
+  folder: ""
+  id: b444f915-4657-4b27-9327-c697c06ba94e
+  name: rsvpCounts
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  tags: {}
+  timestamps: {}
+  version: ""
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options:
+      executeOnPageLoad: false

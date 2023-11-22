@@ -1,0 +1,25 @@
+blocks:
+  - name: deleteJunctions
+    step:
+      cockroachdb:
+        body: DELETE from event_attendee_junction where
+          event_attendee_junction.attendee_id =
+          {{Attendee_Table.selectedRow.id}} returning *;
+        usePreparedSql: true
+      integration: 7de28f63-1270-4a36-86a2-425ba704983f
+  - name: deletePerson
+    step:
+      cockroachdb:
+        body: DELETE from attendee where attendee.id = {{Attendee_Table.selectedRow.id}}
+          returning *;
+        usePreparedSql: true
+      integration: 7de28f63-1270-4a36-86a2-425ba704983f
+metadata:
+  id: fa0af6a3-7848-44b1-9589-ea64d6e1daea
+  name: deleteAttendee
+  organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
+  timestamps: {}
+trigger:
+  application:
+    id: d61a0b6b-1163-4406-b3f3-ad711db21979
+    options: {}
