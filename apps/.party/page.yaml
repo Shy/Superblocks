@@ -3439,8 +3439,8 @@ layouts:
                       linkUrl: "{{selectedEventTable.tableData.map((currentRow) => { return
                         currentRow.updated_at })}}"
                       openInNewTab: true
-                      outputFormat: "{{selectedEventTable.tableData.map((currentRow) => { return 'MMM
-                        Mo hh:mm a z'})}}"
+                      outputFormat: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return 'MMM Do hh:mm a z'})}}"
                       textSize: PARAGRAPH
                       verticalAlignment: CENTER
                       width: 150

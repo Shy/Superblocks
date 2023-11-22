@@ -38,10 +38,8 @@ blocks:
     step:
       integration: python
       python:
-        body: >-
-          output =
-          {"attending":0,"maybe":0,None:0,"not_attending":0,"plusOne":getPlusOne.output[0].plus}
-
+        body: |-
+          output = {"attending":0,"maybe":0,None:0,"not_attending":0,"plusOne":getPlusOne.output[0].plus}
 
 
           for item in getCounts.output:

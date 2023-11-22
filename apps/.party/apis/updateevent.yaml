@@ -28,11 +28,9 @@ blocks:
             step:
               integration: 57650726-5907-47e7-bf54-2d33c7a19838
               postgres:
-                body: >-
+                body: |-
                   UPDATE events
-
                   set  event={{eventNameForm.value}}, location={{eventLocationForm.value}}, description={{eventDescriptionForm.value}}, date={{eventDateForm.outputDateUtc}},week_out_message={{eventWeekSMSForm.value}}, day_out_message={{eventDaySMSForm.value}},hour_out_message={{eventHourSMSForm.value}},image_id={{uploadImage.output.data.id}}
-
                   where id={{Event_Table.selectedRow.id}} RETURNING *;
                 filterBy: []
                 mappedColumns: []
@@ -45,11 +43,9 @@ blocks:
             step:
               integration: 57650726-5907-47e7-bf54-2d33c7a19838
               postgres:
-                body: >-
+                body: |-
                   UPDATE events
-
                   set  event={{eventNameForm.value}}, location={{eventLocationForm.value}}, description={{eventDescriptionForm.value}}, date={{eventDateForm.outputDateUtc}},week_out_message={{eventWeekSMSForm.value}}, day_out_message={{eventDaySMSForm.value}},hour_out_message={{eventHourSMSForm.value}}
-
                   where id={{Event_Table.selectedRow.id}} RETURNING *;
                 filterBy: []
                 mappedColumns: []
@@ -61,7 +57,7 @@ blocks:
     step:
       integration: javascript
       javascript:
-        body: >
+        body: |
           /*
            * You can use Javascript Functions to:
            *   1. Transform the output of previous Steps by referencing their output (ex. Step1.output)
