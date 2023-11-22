@@ -1,0 +1,12 @@
+{
+  "configType": "ROOT",
+  "metadata": {
+    "cliVersion": "1.0.2"
+  },
+  "resources": {
+    "d61a0b6b-1163-4406-b3f3-ad711db21979": {
+      "location": "apps/.party",
+      "resourceType": "APPLICATION"
+    }
+  }
+}
