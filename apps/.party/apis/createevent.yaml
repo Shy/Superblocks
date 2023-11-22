@@ -36,9 +36,8 @@ blocks:
     step:
       integration: 57650726-5907-47e7-bf54-2d33c7a19838
       postgres:
-        body: >-
+        body: |-
           -- You can use SQL to query data (ex. SELECT * FROM orders;)
-
 
           INSERT INTO "public"."events"("public_id", "event", "date", "location", "description","image_id","week_out_message","day_out_message","hour_out_message") VALUES({{getEventNanoID.output}}, {{createNewEventName.value}}, {{createNewEventDate.outputDateUtc}}, {{createNewEventLocation.value}}, {{createNewEventDescription.value}},{{uploadImage.output.data.id}},{{createNewEventWeekSMS.value}},{{createNewEventDaySMS.value}},{{createNewEventHourSMS.value}}) RETURNING *;
         filterBy: []
@@ -56,10 +55,8 @@ blocks:
     step:
       integration: 57650726-5907-47e7-bf54-2d33c7a19838
       postgres:
-        body: >-
-          INSERT INTO event_attendee_junction (public_id, attendee_id, event_id
-          ,rsvp) 
-
+        body: |-
+          INSERT INTO event_attendee_junction (public_id, attendee_id, event_id ,rsvp) 
           VALUES ('{{getJunctionNanoID.output}}', 'f9ed72ec-3323-46c6-854f-c20721da4022', '{{createEventSQL.output[0].id}}','attending') returning *;
         filterBy: []
         mappedColumns: []

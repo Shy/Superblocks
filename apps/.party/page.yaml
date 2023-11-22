@@ -3667,7 +3667,7 @@ layouts:
                             mode: gridUnit
                             value: 0
                           parentId: cznxobj1d7
-                          text: "{{rsvpCounts.response.attending}}+{{rsvpCounts.response.plusOne}} "
+                          text: "{{rsvpCounts.response.attending}} + {{rsvpCounts.response.plusOne}} "
                           textAlign: CENTER
                           textColor: "#14CDB7"
                           textStyle: HEADING_1

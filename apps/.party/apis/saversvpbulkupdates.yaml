@@ -5,7 +5,7 @@ blocks:
           step:
             integration: 57650726-5907-47e7-bf54-2d33c7a19838
             postgres:
-              body: >-
+              body: |-
                 update event_attendee_junction
                    set rsvp = {{item.value.rsvp}}, plus_one = {{item.value.plus_one}}
                 where event_attendee_junction.public_id = {{item.value.public_id}} returning *;
@@ -25,9 +25,8 @@ blocks:
           step:
             integration: 57650726-5907-47e7-bf54-2d33c7a19838
             postgres:
-              body: >-
+              body: |-
                 -- You can use SQL to query data (ex. SELECT * FROM orders;)
-
 
                 DELETE FROM event_attendee_junction WHERE public_id = {{item.value.public_id}};
               filterBy: []

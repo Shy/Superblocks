@@ -3,13 +3,10 @@ blocks:
     step:
       integration: 57650726-5907-47e7-bf54-2d33c7a19838
       postgres:
-        body: >-
+        body: |-
           -- You can use SQL to query data (ex. SELECT * FROM orders;)
-
           SELECT * 
-
           FROM attendee 
-
           WHERE NOT EXISTS 
               (SELECT * 
                FROM event_attendee_junction 
@@ -34,10 +31,8 @@ blocks:
             step:
               integration: 57650726-5907-47e7-bf54-2d33c7a19838
               postgres:
-                body: >-
-                  INSERT INTO event_attendee_junction (public_id, attendee_id,
-                  event_id) 
-
+                body: |-
+                  INSERT INTO event_attendee_junction (public_id, attendee_id, event_id) 
                   VALUES ({{getNanoID.output}} ,{{item.value.id}}, {{Event_Table.selectedRow.id}}) returning *;
                 filterBy: []
                 mappedColumns: []
