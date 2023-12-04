@@ -29,7 +29,7 @@ blocks:
         body: |-
           SELECT sum(plus_one) as plus
           FROM event_attendee_junction
-          WHERE event_id = {{Event_Table.selectedRow.id}};
+          WHERE event_id = {{Event_Table.selectedRow.id}} AND rsvp = 'attending';
         filterBy: []
         mappedColumns: []
         operation: run_sql
@@ -39,11 +39,17 @@ blocks:
       integration: python
       python:
         body: |-
-          output = {"attending":0,"maybe":0,None:0,"not_attending":0,"plusOne":getPlusOne.output[0].plus}
+          
+
+          output = {"attending": "0", "maybe": "0", None: "0", "not_attending": "0"}
 
 
           for item in getCounts.output:
-              output[item['rsvp']] = item['rsvp_status']
+              output[item['rsvp']] = str(item['rsvp_status'])
+              
+          if getPlusOne.output[0].plus != "0":
+              output["attending"] += f'+{getPlusOne.output[0].plus}'
+
           return output
         superblocksMetadata:
           pluginVersion: 0.0.7
