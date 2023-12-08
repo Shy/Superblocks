@@ -2380,6 +2380,8 @@ layouts:
                               dynamicTriggerPathList:
                                 - key: onTextChanged
                                 - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
                               gridColumns: 47
                               height:
                                 mode: gridUnit
@@ -2392,6 +2394,12 @@ layouts:
                               left:
                                 mode: gridUnit
                                 value: 0
+                              onFocus:
+                                - id: yv2f16fxip
+                                  newWindow: true
+                              onFocusOut:
+                                - id: mwxlmx6rs0
+                                  newWindow: true
                               onSubmit:
                                 - id: nyxscit3h7
                                   newWindow: true

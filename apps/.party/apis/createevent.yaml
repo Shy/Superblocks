@@ -57,7 +57,7 @@ blocks:
       postgres:
         body: |-
           INSERT INTO event_attendee_junction (public_id, attendee_id, event_id ,rsvp) 
-          VALUES ('{{getJunctionNanoID.output}}', 'f9ed72ec-3323-46c6-854f-c20721da4022', '{{createEventSQL.output[0].id}}','attending') returning *;
+          VALUES ({{getJunctionNanoID.output}}, 'f9ed72ec-3323-46c6-854f-c20721da4022', {{createEventSQL.output[0].id}},'attending') returning *;
         filterBy: []
         mappedColumns: []
         operation: run_sql
