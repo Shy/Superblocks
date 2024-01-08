@@ -15,7 +15,7 @@ blocks:
         authType: api-key
         body: ""
         bodyType: formData
-        fileFormKey: file
+        fileFormKey: ""
         fileName: ""
         formData:
           - key: image
@@ -69,7 +69,8 @@ metadata:
   name: createEvent
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
   tags: {}
-  timestamps: {}
+  timestamps:
+    updated: 2024-01-08T04:55:47.230Z
   version: ""
 trigger:
   application:
