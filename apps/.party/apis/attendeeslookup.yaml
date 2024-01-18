@@ -39,7 +39,7 @@ blocks:
                     body: |-
                       -- You can use SQL to query data (ex. SELECT * FROM orders;)
 
-                      select count(events.events) from events where events.date <= current_date;
+                      select count(events) from events where date <= current_date;
                     filterBy: []
                     mappedColumns: []
                     operation: run_sql
@@ -81,7 +81,8 @@ metadata:
   name: attendeesLookup
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
   tags: {}
-  timestamps: {}
+  timestamps:
+    updated: 2024-01-18T19:55:43.831Z
   version: ""
 trigger:
   application:
