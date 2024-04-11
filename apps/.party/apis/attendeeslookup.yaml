@@ -75,15 +75,9 @@ blocks:
         superblocksMetadata:
           pluginVersion: 0.0.7
 metadata:
-  description: ""
-  folder: ""
   id: d07a846a-dcf7-4a28-bee7-af853ef6e6bb
   name: attendeesLookup
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps:
-    updated: 2024-01-18T19:55:43.831Z
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

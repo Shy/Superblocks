@@ -13,14 +13,9 @@ blocks:
         operation: run_sql
         usePreparedSql: true
 metadata:
-  description: ""
-  folder: ""
   id: 8b3af756-2d7f-47d5-9747-2f26e8050770
   name: selectedEventLookup
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps: {}
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

@@ -24,14 +24,9 @@ blocks:
         item: item
     name: AttendeeLoop
 metadata:
-  description: ""
-  folder: ""
   id: f27b7b11-d965-4d5a-8b03-40eb5e4098a8
   name: updateAttendees
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps: {}
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

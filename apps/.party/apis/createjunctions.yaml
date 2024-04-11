@@ -62,14 +62,9 @@ blocks:
           'f9ed72ec-3323-46c6-854f-c20721da4022')}}"
     name: setShyToAttending
 metadata:
-  description: ""
-  folder: ""
   id: aa7fc38f-1c8c-4a53-9bdd-608ab80634a4
   name: createJunctions
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps: {}
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

@@ -68,14 +68,9 @@ blocks:
            */
           console.warn('Console.warn: ' + 'No messages to send.');
 metadata:
-  description: ""
-  folder: ""
   id: 21437fb9-49f2-4ad5-9e82-1a1bcb31919d
   name: updateEvent
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps: {}
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

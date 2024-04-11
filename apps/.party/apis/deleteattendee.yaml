@@ -18,7 +18,6 @@ metadata:
   id: fa0af6a3-7848-44b1-9589-ea64d6e1daea
   name: deleteAttendee
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  timestamps: {}
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

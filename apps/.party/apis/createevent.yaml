@@ -56,22 +56,16 @@ blocks:
       integration: 57650726-5907-47e7-bf54-2d33c7a19838
       postgres:
         body: |-
-          INSERT INTO event_attendee_junction (public_id, attendee_id, event_id ,rsvp) 
-          VALUES ({{getJunctionNanoID.output}}, 'f9ed72ec-3323-46c6-854f-c20721da4022', {{createEventSQL.output[0].id}},'attending') returning *;
+          INSERT INTO event_attendee_junction (public_id, attendee_id, event_id ,rsvp,help) 
+          VALUES ({{getJunctionNanoID.output}}, 'f9ed72ec-3323-46c6-854f-c20721da4022', {{createEventSQL.output[0].id}},'attending','🍳') returning *;
         filterBy: []
         mappedColumns: []
         operation: run_sql
         usePreparedSql: true
 metadata:
-  description: ""
-  folder: ""
   id: 7f0cc638-95c4-407f-a536-550d0a2335ba
   name: createEvent
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  tags: {}
-  timestamps:
-    updated: 2024-01-08T04:55:47.230Z
-  version: ""
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979

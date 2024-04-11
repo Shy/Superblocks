@@ -1558,6 +1558,7 @@ layouts:
                               width:
                                 mode: gridUnit
                                 value: 76
+                          collapseWhenHidden: false
                           detachFromLayout: true
                           dynamicBindingPathList: []
                           dynamicTriggerPathList: []
@@ -1591,7 +1592,7 @@ layouts:
                       dragDisabled: true
                       gridColumns: 96
                       height:
-                        mode: gridUnit
+                        mode: fitContent
                         value: 31
                       isLoading: true
                       isVisible: true
@@ -2167,13 +2168,14 @@ layouts:
                               width:
                                 mode: gridUnit
                                 value: 46
+                          collapseWhenHidden: false
                           detachFromLayout: true
                           dynamicBindingPathList: []
                           dynamicTriggerPathList: []
                           gridColumns: 96
                           height:
                             mode: gridUnit
-                            value: 47
+                            value: 46
                           isDisabled: false
                           isInModal: true
                           isLoading: false
@@ -2184,7 +2186,7 @@ layouts:
                             value: 0
                           minHeight:
                             mode: px
-                            value: 352
+                            value: 564
                           parentId: vd40gwhlz9
                           shouldScrollContents: false
                           top:
@@ -2200,13 +2202,16 @@ layouts:
                       dragDisabled: true
                       gridColumns: 96
                       height:
-                        mode: gridUnit
-                        value: 47
+                        mode: fitContent
+                        value: 49
                       isLoading: true
                       isVisible: true
                       left:
                         mode: gridUnit
                         value: 0
+                      minHeight:
+                        mode: gridUnit
+                        value: 47
                       parentId: suu6ptvk7q
                       shouldScrollContents: true
                       top:
@@ -2266,6 +2271,8 @@ layouts:
                               dynamicTriggerPathList:
                                 - key: onTextChanged
                                 - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
                               gridColumns: 47
                               height:
                                 mode: gridUnit
@@ -2279,6 +2286,12 @@ layouts:
                                 mode: gridUnit
                                 value: 0
                               maxLength: "131"
+                              onFocus:
+                                - id: 41rfa7pclq
+                                  newWindow: true
+                              onFocusOut:
+                                - id: jwzpai22y4
+                                  newWindow: true
                               onSubmit:
                                 - id: o5e9c4jmb7
                                   newWindow: true
@@ -2304,6 +2317,8 @@ layouts:
                               dynamicTriggerPathList:
                                 - key: onTextChanged
                                 - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
                               gridColumns: 47
                               height:
                                 mode: gridUnit
@@ -2317,6 +2332,12 @@ layouts:
                                 mode: gridUnit
                                 value: 49
                               maxLength: "131"
+                              onFocus:
+                                - id: 7hdfkqmsw5
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 54c27gzfxl
+                                  newWindow: true
                               onSubmit:
                                 - id: o5e9c4jmb7
                                   newWindow: true
@@ -2342,6 +2363,8 @@ layouts:
                               dynamicTriggerPathList:
                                 - key: onTextChanged
                                 - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
                               gridColumns: 47
                               height:
                                 mode: gridUnit
@@ -2355,6 +2378,12 @@ layouts:
                                 mode: gridUnit
                                 value: 0
                               maxLength: "131"
+                              onFocus:
+                                - id: smi3m0k5t6
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 1ktuynacm9
+                                  newWindow: true
                               onSubmit:
                                 - id: o5e9c4jmb7
                                   newWindow: true
@@ -2593,7 +2622,7 @@ layouts:
                               label: ""
                               left:
                                 mode: gridUnit
-                                value: 49
+                                value: 48
                               onDateSelected:
                                 - id: 6hzctgmk6t
                                   newWindow: true
@@ -2709,6 +2738,7 @@ layouts:
                               width:
                                 mode: gridUnit
                                 value: 48
+                          collapseWhenHidden: false
                           detachFromLayout: true
                           dynamicBindingPathList: []
                           dynamicTriggerPathList: []
@@ -2726,7 +2756,7 @@ layouts:
                             value: 0
                           minHeight:
                             mode: px
-                            value: 352
+                            value: 564
                           parentId: 97hp5tp04g
                           shouldScrollContents: false
                           top:
@@ -2742,13 +2772,16 @@ layouts:
                       dragDisabled: true
                       gridColumns: 96
                       height:
-                        mode: gridUnit
-                        value: 47
+                        mode: fitContent
+                        value: 49
                       isLoading: true
                       isVisible: true
                       left:
                         mode: gridUnit
                         value: 0
+                      minHeight:
+                        mode: gridUnit
+                        value: 47
                       parentId: oy3mjpr2gp
                       shouldScrollContents: true
                       top:
@@ -3037,6 +3070,7 @@ layouts:
                               width:
                                 mode: gridUnit
                                 value: 20
+                          collapseWhenHidden: false
                           detachFromLayout: true
                           dynamicBindingPathList: []
                           dynamicTriggerPathList: []
@@ -3070,7 +3104,7 @@ layouts:
                       dragDisabled: true
                       gridColumns: 96
                       height:
-                        mode: gridUnit
+                        mode: fitContent
                         value: 22
                       isLoading: true
                       isVisible: true
@@ -3697,6 +3731,7 @@ layouts:
                           width:
                             mode: gridUnit
                             value: 23
+                      collapseWhenHidden: false
                       containerStyle: none
                       detachFromLayout: true
                       dynamicBindingPathList: []
@@ -3836,6 +3871,7 @@ layouts:
                   width:
                     mode: gridUnit
                     value: 21
+              collapseWhenHidden: false
               containerStyle: none
               detachFromLayout: true
               dynamicBindingPathList: []
@@ -3844,6 +3880,7 @@ layouts:
               height:
                 mode: gridUnit
                 value: 134
+              isVisible: true
               layout: FIXED_GRID
               left:
                 mode: gridUnit
@@ -3865,8 +3902,8 @@ layouts:
           dragDisabled: true
           gridColumns: 96
           height:
-            mode: gridUnit
-            value: 99
+            mode: fitContent
+            value: 131
           isLoading: false
           isVisible: true
           left:
@@ -3889,9 +3926,16 @@ layouts:
       height:
         mode: gridUnit
         value: 99
+      layoutVersion: 4
       left:
         mode: gridUnit
         value: 0
+      maxWidth:
+        mode: px
+        value: 7680
+      minWidth:
+        mode: px
+        value: 840
       stateVars:
         stateVarMap:
           b2c348d6-4473-4d2e-bdf2-fcba500154d7:

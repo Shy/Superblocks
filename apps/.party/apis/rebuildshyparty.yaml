@@ -21,7 +21,6 @@ metadata:
   id: fc394a0c-59a0-425b-bcc0-788b6b8cc9b7
   name: rebuildShyParty
   organization: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-  timestamps: {}
 trigger:
   application:
     id: d61a0b6b-1163-4406-b3f3-ad711db21979
