@@ -733,7 +733,7 @@ layouts:
           parentId: "0"
           stackColumnsAt:
             mode: px
-            value: 480
+            value: 768
           top:
             mode: gridUnit
             value: 0
@@ -743,7 +743,8 @@ layouts:
           width:
             mode: gridUnit
             value: 96
-        - canExtend: true
+        - backgroundColor: ""
+          canExtend: true
           children:
             - alignment: STRETCH
               backgroundColor: none
