@@ -772,6 +772,7 @@ layouts:
                     location: 164
                     public_id: 90
                   compactMode: VERY_SHORT
+                  configuredPageSize: 5
                   defaultFilters: "{}"
                   defaultSelectedRow: "0"
                   derivedColumns:
@@ -847,8 +848,8 @@ layouts:
                     - key: primaryColumns.public_id.onClick
                   gridColumns: 72
                   height:
-                    mode: fitContent
-                    value: 22
+                    mode: fillParent
+                    value: 1
                   horizontalAlignment: LEFT
                   isDownloadable: true
                   isFilterable: true
@@ -3115,7 +3116,7 @@ layouts:
               gridColumns: 72
               height:
                 mode: fitContent
-                value: 22
+                value: 23
               isVisible: true
               layout: VSTACK
               left:
@@ -3207,14 +3208,14 @@ layouts:
                   gridColumns: 24
                   height:
                     mode: gridUnit
-                    value: 2
+                    value: 4
                   image: "{{URLGenerate.response}}"
                   imageShape: RECTANGLE
                   isLoading: false
                   isVisible: true
                   left:
                     mode: gridUnit
-                    value: 38
+                    value: 0
                   maxZoomLevel: 1
                   onClick:
                     - apiNames:
@@ -3362,7 +3363,7 @@ layouts:
               gridColumns: 24
               height:
                 mode: fitContent
-                value: 22
+                value: 23
               isLoading: false
               isVisible: true
               layout: VSTACK
@@ -3390,7 +3391,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 24
+            value: 25
           isLoading: false
           isVisible: true
           left:
@@ -3473,6 +3474,7 @@ layouts:
                     customColumn2: 150.96296296296296
                     rsvp: 132.33333333333331
                   compactMode: VERY_SHORT
+                  configuredPageSize: 20
                   defaultFilters: "{}"
                   defaultSelectedRow: "0"
                   defaultSort:
@@ -3557,8 +3559,8 @@ layouts:
                   enableRowDeletion: true
                   gridColumns: 96
                   height:
-                    mode: gridUnit
-                    value: 43
+                    mode: fitContent
+                    value: 63
                   horizontalAlignment: LEFT
                   isDownloadable: true
                   isFilterable: true
@@ -3777,7 +3779,7 @@ layouts:
               gridColumns: 96
               height:
                 mode: fitContent
-                value: 43
+                value: 63
               isLoading: false
               isVisible: true
               layout: VSTACK
@@ -3803,7 +3805,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 45
+            value: 65
           isLoading: false
           isVisible: true
           left:
@@ -3878,6 +3880,7 @@ layouts:
                     - attendeecount
                   columnSizeMap: {}
                   compactMode: VERY_SHORT
+                  configuredPageSize: 20
                   defaultFilters: "{}"
                   defaultSearchText: ""
                   defaultSelectedRow: "0"
@@ -3921,8 +3924,8 @@ layouts:
                     - key: primaryColumns.public_id.onClick
                   gridColumns: 96
                   height:
-                    mode: gridUnit
-                    value: 33
+                    mode: fitContent
+                    value: 63
                   horizontalAlignment: LEFT
                   isDownloadable: true
                   isFilterable: true
@@ -4181,7 +4184,7 @@ layouts:
               gridColumns: 96
               height:
                 mode: fitContent
-                value: 33
+                value: 63
               isLoading: false
               isVisible: true
               layout: VSTACK
@@ -4208,8 +4211,8 @@ layouts:
           dynamicTriggerPathList: []
           gridColumns: 96
           height:
-            mode: gridUnit
-            value: 27
+            mode: fitContent
+            value: 65
           isLoading: false
           isVisible: true
           left:
