@@ -4,4 +4,24 @@ organizationId: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
 pages:
   - id: ec0a7f64-eba1-45c4-81f8-43663927fef0
     isDefault: true
-settings: {}
+settings:
+  theme:
+    borderRadius:
+      mode: px
+      value: 16
+    mode: LIGHT
+    padding:
+      bottom:
+        mode: px
+        value: 11
+      left:
+        mode: px
+        value: 16
+      right:
+        mode: px
+        value: 16
+      top:
+        mode: px
+        value: 11
+    primaryColor: "#FF62A4"
+    typeFace: Roboto
