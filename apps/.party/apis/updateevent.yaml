@@ -53,20 +53,6 @@ blocks:
                 usePreparedSql: true
         condition: "{{updateEventBG.files.length === 0}}"
     name: checkIfImage
-  - name: logError
-    step:
-      integration: javascript
-      javascript:
-        body: |
-          /*
-           * You can use Javascript Functions to:
-           *   1. Transform the output of previous Steps by referencing their output (ex. Step1.output)
-           *   2. Write business logic referencing UI components (ex. Table1.selectedRow.id)
-           *   3. Make http calls via axios
-           *
-           * Moment.js (moment), lodash.js (_), axios, aws-sdk, base64url, jsonwebtoken, and xmlbuilder2 libraries are currently supported.
-           */
-          console.warn('Console.warn: ' + 'No messages to send.');
 metadata:
   id: 21437fb9-49f2-4ad5-9e82-1a1bcb31919d
   name: updateEvent
