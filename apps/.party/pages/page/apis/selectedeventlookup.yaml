@@ -4,7 +4,8 @@ blocks:
       integration: 57650726-5907-47e7-bf54-2d33c7a19838
       postgres:
         body: select attendee.attendee, event_attendee_junction.rsvp,
-          event_attendee_junction.public_id, event_attendee_junction.updated_at,
+          event_attendee_junction.help, event_attendee_junction.public_id,
+          event_attendee_junction.updated_at,
           event_attendee_junction.plus_one  from event_attendee_junction join
           attendee on event_attendee_junction.attendee_id = attendee.id where
           event_attendee_junction.event_id =  {{Event_Table.selectedRow.id}};

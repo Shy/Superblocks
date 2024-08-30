@@ -711,7 +711,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 9
+            value: 8.833333333333334
           isLoading: false
           isVisible: true
           left:
@@ -3109,7 +3109,6 @@ layouts:
                     value: 12
                   widthPreset: SMALL
               collapseWhenHidden: false
-              containerStyle: none
               detachFromLayout: true
               distribution: TOP
               dynamicBindingPathList: []
@@ -3392,7 +3391,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 25
+            value: 24.833333333333332
           isLoading: false
           isVisible: true
           left:
@@ -3465,6 +3464,7 @@ layouts:
                       width: 150
                   columnOrder:
                     - attendee
+                    - help
                     - plus_one
                     - rsvp
                     - updated_at
@@ -3472,7 +3472,7 @@ layouts:
                     - customColumn1
                     - customColumn3
                   columnSizeMap:
-                    customColumn2: 150.96296296296296
+                    help: 34.964102564102575
                     rsvp: 132.33333333333331
                   compactMode: VERY_SHORT
                   configuredPageSize: 20
@@ -3549,6 +3549,9 @@ layouts:
                     - key: primaryColumns.plus_one.computedValue
                     - key: primaryColumns.plus_one.linkUrl
                     - key: primaryColumns.plus_one.linkLabel
+                    - key: primaryColumns.help.computedValue
+                    - key: primaryColumns.help.linkUrl
+                    - key: primaryColumns.help.linkLabel
                   dynamicPropertyPathList:
                     - key: primaryColumns.updated_at.outputFormat
                   dynamicTriggerPathList:
@@ -3652,6 +3655,37 @@ layouts:
                       linkUrl: ""
                       openInNewTab: true
                       textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    help:
+                      columnType: tags
+                      computedValue: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.help })}}"
+                      enableFilter: true
+                      enableSort: true
+                      headerIcon: ""
+                      headerIconPosition: LEFT
+                      horizontalAlignment: LEFT
+                      id: help
+                      imageBorderRadius:
+                        mode: px
+                        value: 0
+                      imageSize: FIT
+                      index: 1
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: help
+                      linkLabel: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.help })}}"
+                      linkUrl: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.help })}}"
+                      notation: standard
+                      openImageUrl: true
+                      openInNewTab: true
+                      tagDisplayConfig: {}
+                      textSize: PARAGRAPH
+                      useLabelAsDisplayValue: true
                       verticalAlignment: CENTER
                       width: 150
                     plus_one:
@@ -3806,7 +3840,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 65
+            value: 64.83333333333333
           isLoading: false
           isVisible: true
           left:
@@ -3875,6 +3909,7 @@ layouts:
                     - public_id
                     - phone
                     - dietary_restrictions
+                    - email
                     - created_at
                     - updated_at
                     - invited
@@ -3915,6 +3950,9 @@ layouts:
                     - key: primaryColumns.attendeecount.computedValue
                     - key: primaryColumns.attendeecount.linkUrl
                     - key: primaryColumns.attendeecount.linkLabel
+                    - key: primaryColumns.email.computedValue
+                    - key: primaryColumns.email.linkUrl
+                    - key: primaryColumns.email.linkLabel
                   dynamicPropertyPathList:
                     - key: primaryColumns.invited.buttonStyle
                   dynamicTriggerPathList:
@@ -4044,6 +4082,37 @@ layouts:
                         currentRow.dietary_restrictions })}}"
                       openInNewTab: true
                       textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    email:
+                      columnType: text
+                      computedValue: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => {
+                        return currentRow.email })}}"
+                      enableFilter: true
+                      enableSort: true
+                      headerIcon: ""
+                      headerIconPosition: LEFT
+                      horizontalAlignment: LEFT
+                      id: email
+                      imageBorderRadius:
+                        mode: px
+                        value: 0
+                      imageSize: FIT
+                      index: 4
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: email
+                      linkLabel: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.email })}}"
+                      linkUrl: "{{Attendee_Table.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.email })}}"
+                      notation: standard
+                      openImageUrl: true
+                      openInNewTab: true
+                      tagDisplayConfig: {}
+                      textSize: PARAGRAPH
+                      useLabelAsDisplayValue: true
                       verticalAlignment: CENTER
                       width: 150
                     id:
@@ -4213,7 +4282,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 65
+            value: 64.83333333333333
           isLoading: false
           isVisible: true
           left:
@@ -4244,11 +4313,13 @@ layouts:
             value: 96
       detachFromLayout: true
       dynamicBindingPathList: []
+      events:
+        eventMap: {}
       gridColumns: 96
       height:
         mode: gridUnit
         value: 99
-      layoutVersion: 4
+      layoutVersion: 5
       left:
         mode: gridUnit
         value: 0
