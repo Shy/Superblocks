@@ -1,9 +1,7 @@
+configuration: {}
 id: d61a0b6b-1163-4406-b3f3-ad711db21979
 name: .Party
 organizationId: d5261f83-ea48-40f1-a8b7-c779a60cb2eb
-pages:
-  - id: ec0a7f64-eba1-45c4-81f8-43663927fef0
-    isDefault: true
 settings:
   theme:
     borderRadius:
