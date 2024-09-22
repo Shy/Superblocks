@@ -7,7 +7,7 @@ blocks:
             postgres:
               body: |-
                 update event_attendee_junction
-                   set rsvp = {{item.value.rsvp}}, plus_one = {{item.value.plus_one}}
+                   set rsvp = {{item.value.rsvp}}, plus_one = {{item.value.plus_one}}, help={{item.value.help}}
                 where event_attendee_junction.public_id = {{item.value.public_id}} returning *;
               filterBy: []
               mappedColumns: []
