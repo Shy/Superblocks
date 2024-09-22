@@ -3552,6 +3552,7 @@ layouts:
                     - key: primaryColumns.help.computedValue
                     - key: primaryColumns.help.linkUrl
                     - key: primaryColumns.help.linkLabel
+                    - key: primaryColumns.help.editOptions
                   dynamicPropertyPathList:
                     - key: primaryColumns.updated_at.outputFormat
                   dynamicTriggerPathList:
@@ -3663,8 +3664,18 @@ layouts:
                         return currentRow.help })}}"
                       editDropdownClientSideFiltering: true
                       editInputType: DROPDOWN
-                      editMultiSelect: true
-                      editOptions: '["🍳","🧹","🧑‍🍼"]'
+                      editMultiSelect: false
+                      editOptions: |-
+                        
+                        {{
+                        Array.from(new Set(
+                          _.flatten(
+                            selectedEventTable.tableData.map(
+                              ({ help }) => help
+                            )
+                          )
+                        ))
+                        }}
                       enableFilter: true
                       enableSort: true
                       headerIcon: ""
