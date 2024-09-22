@@ -3552,6 +3552,7 @@ layouts:
                     - key: primaryColumns.help.computedValue
                     - key: primaryColumns.help.linkUrl
                     - key: primaryColumns.help.linkLabel
+                    - key: primaryColumns.help.editOptions
                   dynamicPropertyPathList:
                     - key: primaryColumns.updated_at.outputFormat
                   dynamicTriggerPathList:
@@ -3564,7 +3565,7 @@ layouts:
                   gridColumns: 96
                   height:
                     mode: fitContent
-                    value: 63
+                    value: 90
                   horizontalAlignment: LEFT
                   isDownloadable: true
                   isFilterable: true
@@ -3661,6 +3662,20 @@ layouts:
                       columnType: tags
                       computedValue: "{{selectedEventTable.tableDataWithInserts.map((currentRow) => {
                         return currentRow.help })}}"
+                      editDropdownClientSideFiltering: true
+                      editInputType: DROPDOWN
+                      editMultiSelect: true
+                      editOptions: |-
+                        
+                        {{
+                        Array.from(new Set(
+                          _.flatten(
+                            selectedEventTable.tableData.map(
+                              ({ help }) => help
+                            )
+                          )
+                        ))
+                        }}
                       enableFilter: true
                       enableSort: true
                       headerIcon: ""
@@ -3673,6 +3688,7 @@ layouts:
                       imageSize: FIT
                       index: 1
                       isDerived: false
+                      isEditable: true
                       isEditableOnInsertion: true
                       isVisible: true
                       label: help
@@ -3814,7 +3830,7 @@ layouts:
               gridColumns: 96
               height:
                 mode: fitContent
-                value: 63
+                value: 90
               isLoading: false
               isVisible: true
               layout: VSTACK
@@ -3840,7 +3856,7 @@ layouts:
           gridColumns: 96
           height:
             mode: fitContent
-            value: 64.83333333333333
+            value: 91.83333333333333
           isLoading: false
           isVisible: true
           left:
