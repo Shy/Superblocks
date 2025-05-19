@@ -731,9 +731,6 @@ layouts:
               mode: px
               value: 11
           parentId: "0"
-          stackColumnsAt:
-            mode: px
-            value: 768
           top:
             mode: gridUnit
             value: 0
@@ -746,7 +743,7 @@ layouts:
         - backgroundColor: ""
           canExtend: true
           children:
-            - alignment: STRETCH
+            - alignment: CENTER
               backgroundColor: none
               canExtend: true
               children:
@@ -849,8 +846,8 @@ layouts:
                     - key: primaryColumns.public_id.onClick
                   gridColumns: 72
                   height:
-                    mode: fillParent
-                    value: 1
+                    mode: gridUnit
+                    value: 23
                   horizontalAlignment: LEFT
                   isDownloadable: true
                   isFilterable: true
@@ -1180,7 +1177,7 @@ layouts:
                   widgetId: m4akx1mjmw
                   widgetName: Event_Table
                   width:
-                    mode: gridUnit
+                    mode: fillParent
                     value: 72
                 - canOutsideClickClose: true
                   children:
@@ -3128,7 +3125,7 @@ layouts:
               parentId: lm2jrimm2x
               spacing:
                 mode: px
-                value: 12
+                value: 6
               top:
                 mode: gridUnit
                 value: 0
@@ -3138,7 +3135,7 @@ layouts:
               width:
                 mode: gridUnit
                 value: 72
-            - alignment: STRETCH
+            - alignment: RIGHT
               appMode: EDIT
               canExtend: true
               children:
@@ -3158,11 +3155,11 @@ layouts:
                   isLoading: false
                   isRequired: false
                   isVertical: true
-                  isVisible: true
+                  isVisible: false
                   label: Site
                   left:
                     mode: gridUnit
-                    value: 3
+                    value: 0
                   onClear:
                     - id: 4lf5gtft4r
                       newWindow: true
@@ -3853,6 +3850,8 @@ layouts:
                 value: 96
           collapseWhenHidden: true
           detachFromLayout: true
+          dynamicBindingPathList: []
+          dynamicTriggerPathList: []
           gridColumns: 96
           height:
             mode: fitContent
@@ -3865,7 +3864,7 @@ layouts:
           parentId: "0"
           stackColumnsAt:
             mode: px
-            value: 480
+            value: 768
           top:
             mode: gridUnit
             value: 0
@@ -4318,6 +4317,9 @@ layouts:
               mode: px
               value: 0
           parentId: "0"
+          stackColumnsAt:
+            mode: px
+            value: 768
           top:
             mode: gridUnit
             value: 0
@@ -4327,15 +4329,2680 @@ layouts:
           width:
             mode: gridUnit
             value: 96
+        - backgroundColor: ""
+          canExtend: true
+          children:
+            - alignment: STRETCH
+              backgroundColor: none
+              canExtend: true
+              children:
+                - animateLoading: false
+                  columnOrder:
+                    - id
+                    - public_id
+                    - event
+                    - date
+                    - description
+                    - location
+                    - created_at
+                    - updated_at
+                    - image_id
+                    - day_out_message
+                    - week_out_message
+                    - customColumn2
+                    - hour_out_message
+                  columnSizeMap:
+                    date: 181.3251728395062
+                    description: 530.2572222222223
+                    event: 289.05
+                    image_id: 60
+                    location: 164
+                    public_id: 90
+                  compactMode: VERY_SHORT
+                  configuredPageSize: 5
+                  defaultFilters: "{}"
+                  defaultSelectedRow: "0"
+                  derivedColumns:
+                    customColumn2:
+                      columnType: text
+                      computedValue: "{{Event_Table.tableData.map((currentRow) => { return
+                        Math.abs(moment().diff(currentRow.date, 'days')+1) })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn2
+                      index: 10
+                      isDerived: true
+                      isVisible: true
+                      label: distanceToToday
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  dynamicBindingPathList:
+                    - key: primaryColumns.id.computedValue
+                    - key: primaryColumns.id.linkUrl
+                    - key: primaryColumns.id.linkLabel
+                    - key: primaryColumns.public_id.computedValue
+                    - key: primaryColumns.public_id.linkUrl
+                    - key: primaryColumns.public_id.linkLabel
+                    - key: primaryColumns.event.computedValue
+                    - key: primaryColumns.event.linkUrl
+                    - key: primaryColumns.event.linkLabel
+                    - key: primaryColumns.date.computedValue
+                    - key: primaryColumns.date.linkUrl
+                    - key: primaryColumns.date.linkLabel
+                    - key: primaryColumns.location.computedValue
+                    - key: primaryColumns.location.linkUrl
+                    - key: primaryColumns.location.linkLabel
+                    - key: primaryColumns.description.computedValue
+                    - key: primaryColumns.description.linkUrl
+                    - key: primaryColumns.description.linkLabel
+                    - key: primaryColumns.created_at.computedValue
+                    - key: primaryColumns.created_at.linkUrl
+                    - key: primaryColumns.created_at.linkLabel
+                    - key: primaryColumns.updated_at.computedValue
+                    - key: primaryColumns.updated_at.linkUrl
+                    - key: primaryColumns.updated_at.linkLabel
+                    - key: tableData
+                    - key: primaryColumns.date.outputFormat
+                    - key: primaryColumns.image_id.computedValue
+                    - key: primaryColumns.image_id.linkUrl
+                    - key: primaryColumns.image_id.linkLabel
+                    - key: primaryColumns.event.buttonLabel
+                    - key: derivedColumns.customColumn2.computedValue
+                    - key: primaryColumns.customColumn2.computedValue
+                    - key: primaryColumns.day_out_message.computedValue
+                    - key: primaryColumns.day_out_message.linkUrl
+                    - key: primaryColumns.day_out_message.linkLabel
+                    - key: primaryColumns.week_out_message.computedValue
+                    - key: primaryColumns.week_out_message.linkUrl
+                    - key: primaryColumns.week_out_message.linkLabel
+                    - key: primaryColumns.hour_out_message.computedValue
+                    - key: primaryColumns.hour_out_message.linkUrl
+                    - key: primaryColumns.hour_out_message.linkLabel
+                    - key: primaryColumns.public_id.buttonLabel
+                  dynamicPropertyPathList:
+                    - key: primaryColumns.date.outputFormat
+                  dynamicTriggerPathList:
+                    - key: onRowClicked
+                    - key: onRowSelected
+                    - key: onSaveChanges
+                    - key: onCancelChanges
+                    - key: primaryColumns.event.onClick
+                    - key: primaryColumns.public_id.onClick
+                  gridColumns: 72
+                  height:
+                    mode: fillParent
+                    value: 1
+                  horizontalAlignment: LEFT
+                  isDownloadable: true
+                  isFilterable: true
+                  isLoading: false
+                  isSearchable: false
+                  isVisible: true
+                  label: Data
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onCancelChanges:
+                    - id: 1ya8fpu4u2
+                      newWindow: true
+                  onRowClicked:
+                    - id: t7ejwrv6wu
+                      newWindow: true
+                  onRowSelected:
+                    - apiNames:
+                        - selectedEventLookup
+                        - rsvpCounts
+                      id: vt0j6y34oq
+                      newWindow: true
+                      type: executeApi
+                  onSaveChanges:
+                    - id: flxv60s5f6
+                      newWindow: true
+                  pageType: CLIENT_SIDE
+                  parentId: d785gqn31l
+                  primaryColumns:
+                    created_at:
+                      columnType: date
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: created_at
+                      index: 6
+                      isDerived: false
+                      isVisible: false
+                      label: created_at
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.created_at })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.created_at
+                        })}}"
+                      openInNewTab: true
+                      outputFormat: X
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    customColumn2:
+                      columnType: text
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        Math.abs(moment().diff(currentRow.date, 'days')+1) })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: customColumn2
+                      index: 10
+                      isDerived: true
+                      isVisible: true
+                      label: distanceToToday
+                      linkLabel: ""
+                      linkUrl: ""
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    date:
+                      columnType: date
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return currentRow.date
+                        })}}"
+                      displayTimezone: US/Eastern
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: date
+                      index: 3
+                      isDerived: false
+                      isVisible: true
+                      label: date
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.date
+                        })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.date })}}"
+                      manageTimezone: true
+                      openInNewTab: true
+                      outputFormat: "{{Table1.tableDataWithInserts.map((currentRow) => { return 'ddd
+                        MMM Do h:mm a z'})}}"
+                      textSize: PARAGRAPH
+                      timezone: US/Eastern
+                      verticalAlignment: CENTER
+                      width: 150
+                    day_out_message:
+                      columnType: text
+                      computedValue: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: day_out_message
+                      index: 9
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: day_out_message
+                      linkLabel: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      linkUrl: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.day_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    description:
+                      columnType: text
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.description})}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: description
+                      index: 5
+                      isDerived: false
+                      isVisible: true
+                      label: description
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.description })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.description
+                        })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    event:
+                      buttonLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.event
+                        })}}"
+                      columnType: text
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return currentRow.event
+                        })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: event
+                      index: 2
+                      isDerived: false
+                      isFrozen: true
+                      isVisible: true
+                      label: event
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.event
+                        })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.event })}}"
+                      onClick:
+                        - id: 5yolmc35qa
+                          name: eventModal
+                          newWindow: true
+                          type: controlModal
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      textWrap: false
+                      verticalAlignment: CENTER
+                      width: 150
+                    hour_out_message:
+                      columnType: text
+                      computedValue: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: hour_out_message
+                      index: 11
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: hour_out_message
+                      linkLabel: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      linkUrl: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.hour_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    id:
+                      columnType: text
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return currentRow.id
+                        })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: id
+                      index: 0
+                      isDerived: false
+                      isVisible: false
+                      label: id
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.id })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.id })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    image_id:
+                      columnType: image
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        'https://i.imgur.com/' + currentRow.image_id  +
+                        '.jpg'})}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: image_id
+                      index: 8
+                      isDerived: false
+                      isVisible: true
+                      label: Background
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.image_id
+                        })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.image_id
+                        })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    location:
+                      columnType: text
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.location })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: location
+                      index: 4
+                      isDerived: false
+                      isVisible: true
+                      label: location
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.location
+                        })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.location
+                        })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    public_id:
+                      buttonLabel: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        'Edit'})}}"
+                      columnType: button
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.public_id })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: public_id
+                      index: 1
+                      isDerived: false
+                      isVisible: true
+                      label: ""
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return currentRow.public_id
+                        })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.public_id
+                        })}}"
+                      onClick:
+                        - apiNames:
+                            - selectedEventLookup
+                          id: lk5y5b258o
+                          name: eventModal
+                          newWindow: true
+                          type: controlModal
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    updated_at:
+                      columnType: date
+                      computedValue: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: updated_at
+                      index: 7
+                      isDerived: false
+                      isVisible: false
+                      label: updated_at
+                      linkLabel: "{{Table1.tableData.map((currentRow) => { return
+                        currentRow.updated_at })}}"
+                      linkUrl: "{{Table1.tableData.map((currentRow) => { return currentRow.updated_at
+                        })}}"
+                      openInNewTab: true
+                      outputFormat: X
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                    week_out_message:
+                      columnType: text
+                      computedValue: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      enableFilter: true
+                      enableSort: true
+                      horizontalAlignment: LEFT
+                      id: week_out_message
+                      index: 10
+                      isDerived: false
+                      isEditableOnInsertion: true
+                      isVisible: true
+                      label: week_out_message
+                      linkLabel: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      linkUrl: "{{Table1.tableDataWithInserts.map((currentRow) => { return
+                        currentRow.week_out_message })}}"
+                      openInNewTab: true
+                      textSize: PARAGRAPH
+                      verticalAlignment: CENTER
+                      width: 150
+                  searchPlaceholder: ""
+                  showColumnBorders: false
+                  tableData: "{{eventsLookup.response}}"
+                  tableHeader: ""
+                  textSize: PARAGRAPH
+                  top:
+                    mode: gridUnit
+                    value: 0
+                  type: TABLE_WIDGET
+                  verticalAlignment: CENTER
+                  widgetId: s1k39ogytq
+                  widgetName: Table1
+                  width:
+                    mode: gridUnit
+                    value: 72
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.hour_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 46
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Three Hour Out Message
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxLength: "131"
+                              onFocus:
+                                - id: 6z3jsfobwt
+                                  newWindow: true
+                              onFocusOut:
+                                - id: e7kjr8pi0g
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 36
+                              type: INPUT_WIDGET
+                              widgetId: 071g4efzvk
+                              widgetName: Input1
+                              width:
+                                mode: gridUnit
+                                value: 46
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.day_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Day Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onFocus:
+                                - id: rqwtzjk8ep
+                                  newWindow: true
+                              onFocusOut:
+                                - id: u5b6x8d8jb
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 41
+                              type: INPUT_WIDGET
+                              widgetId: um8854w62x
+                              widgetName: Input2
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.week_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Week Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "256"
+                              onFocus:
+                                - id: ig9sq6pk04
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 8f9u0ofgf7
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 36
+                              type: INPUT_WIDGET
+                              widgetId: 6uwne6rp66
+                              widgetName: Input3
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - allowedFileTypes: |-
+                                [
+                                  ".jpg"
+                                ]
+                              animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              files: []
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 7
+                              isLoading: false
+                              isRequired: true
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: 1j0yq503ar
+                              selectionType: 1
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: FILE_PICKER_WIDGET
+                              widgetId: zxrr6l3w39
+                              widgetName: FilePicker1
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList:
+                                - key: text
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: 1j0yq503ar
+                              text: Update {{Event_Table.selectedRow.event}}
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: y2el93fi3z
+                              widgetName: Text11
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 29
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 66
+                              onClick:
+                                - apiNames:
+                                    - updateEvent
+                                  id: flt57tqfac
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: bcf9d9ko0t
+                                      message: ""
+                                      name: eventModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: 1j0yq503ar
+                              text: Confirm Changes
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: BUTTON_WIDGET
+                              widgetId: kdxesz1ye2
+                              widgetName: Button4
+                              width:
+                                mode: gridUnit
+                                value: 29
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.event}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: "Title\t"
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: 2sp5ukcyyl
+                                  newWindow: true
+                              onFocusOut:
+                                - id: eae07u2q2m
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: ls3kmu9bdk
+                              widgetName: Input4
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dateFormat: YYYY-MM-DD HH:mm
+                              datePickerType: DATE_PICKER
+                              defaultDate: "{{moment(Event_Table.selectedRow.date)}}"
+                              displayDateFormat: ddd MMM Do h:mm a z
+                              displayTimezone: US/Eastern
+                              dynamicBindingPathList:
+                                - key: defaultDate
+                              dynamicPropertyPathList:
+                                - key: defaultDate
+                                - key: displayDateFormat
+                              dynamicTriggerPathList:
+                                - key: onDateSelected
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              manageTimezone: false
+                              onDateSelected:
+                                - id: u296t0gjwc
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              timezone: US/Eastern
+                              top:
+                                mode: gridUnit
+                                value: 6
+                              twentyFourHourTime: false
+                              type: DATE_PICKER_WIDGET
+                              widgetId: fq5pqrqq74
+                              widgetName: DatePicker1
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: 1j0yq503ar
+                              text: Date
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: TEXT_WIDGET
+                              widgetId: eedwh2x7qr
+                              widgetName: Text12
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.location}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Location
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: 8804rcyli5
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 04vc3mudxe
+                                  newWindow: true
+                              onSubmit:
+                                - id: hybibrmzzk
+                                  newWindow: true
+                              onTextChanged:
+                                - id: pzvo59d1ck
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: INPUT_WIDGET
+                              widgetId: t9eeeh52u0
+                              widgetName: Input5
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Event_Table.selectedRow.description}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 22
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Description
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: zexuktus26
+                                  newWindow: true
+                              onFocusOut:
+                                - id: wqax48xi5e
+                                  newWindow: true
+                              onSubmit:
+                                - id: nyxscit3h7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 0b5cpp2g57
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 14
+                              type: INPUT_WIDGET
+                              widgetId: bahvrinof0
+                              widgetName: Input6
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 16
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              onClick:
+                                - apiNames:
+                                    - createJunctions
+                                  id: 3mikhw85c5
+                                  newWindow: true
+                                  type: executeApi
+                                - apiNames:
+                                    - selectedEventLookup
+                                  direction: close
+                                  id: xzdsh810l9
+                                  name: eventModal
+                                  newWindow: true
+                                  type: controlModal
+                              parentId: 1j0yq503ar
+                              text: Create Junctions
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: BUTTON_WIDGET
+                              widgetId: hzhxi0adwo
+                              widgetName: Button5
+                              width:
+                                mode: gridUnit
+                                value: 16
+                            - animateLoading: true
+                              defaultImage: https://res.cloudinary.com/drako999/image/upload/v1589196259/default.png
+                              dynamicBindingPathList:
+                                - key: image
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              fillContainer: true
+                              gridColumns: 46
+                              height:
+                                mode: gridUnit
+                                value: 20
+                              image: "{{Event_Table.selectedRow.image_id}}"
+                              imageShape: RECTANGLE
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxZoomLevel: 1
+                              onClick:
+                                - id: 6xncu2ts0s
+                                  newWindow: true
+                              parentId: 1j0yq503ar
+                              top:
+                                mode: gridUnit
+                                value: 16
+                              type: IMAGE_WIDGET
+                              widgetId: 9s1bk4dlsm
+                              widgetName: Image1
+                              width:
+                                mode: gridUnit
+                                value: 46
+                          collapseWhenHidden: false
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 46
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 564
+                          parentId: o2oqeaokag
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: 1j0yq503ar
+                          widgetName: Canvas14
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: fitContent
+                        value: 49
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      minHeight:
+                        mode: gridUnit
+                        value: 47
+                      parentId: ci7jjmtlb3
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: o2oqeaokag
+                      widgetName: Section6
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 0
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 0
+                  heightPreset: LARGE
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onClose:
+                    - id: 2hvgrke8g9
+                      newWindow: true
+                  onOpen:
+                    - id: ejsrtkygv2
+                      newWindow: true
+                  parentId: d785gqn31l
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 0
+                  type: MODAL_WIDGET
+                  widgetId: ci7jjmtlb3
+                  widgetName: Modal1
+                  width:
+                    mode: gridUnit
+                    value: 0
+                  widthPreset: LARGE
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].day_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Day Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onFocus:
+                                - id: 41rfa7pclq
+                                  newWindow: true
+                              onFocusOut:
+                                - id: jwzpai22y4
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 42
+                              type: INPUT_WIDGET
+                              widgetId: yihxe25vn3
+                              widgetName: Input7
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].hour_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Three Hour Out Message
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              maxLength: "131"
+                              onFocus:
+                                - id: 7hdfkqmsw5
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 54c27gzfxl
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 37
+                              type: INPUT_WIDGET
+                              widgetId: xi3xs5g88d
+                              widgetName: Input8
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].week_out_message}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Week Out Message
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              maxLength: "131"
+                              onFocus:
+                                - id: smi3m0k5t6
+                                  newWindow: true
+                              onFocusOut:
+                                - id: 1ktuynacm9
+                                  newWindow: true
+                              onSubmit:
+                                - id: o5e9c4jmb7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 1b8wjz8427
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 37
+                              type: INPUT_WIDGET
+                              widgetId: eksnmw0fmm
+                              widgetName: Input9
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].description}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 20
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Description
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: yv2f16fxip
+                                  newWindow: true
+                              onFocusOut:
+                                - id: mwxlmx6rs0
+                                  newWindow: true
+                              onSubmit:
+                                - id: nyxscit3h7
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 0b5cpp2g57
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 16
+                              type: INPUT_WIDGET
+                              widgetId: 9ifci8p1c4
+                              widgetName: Input10
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].location}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Location
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: hybibrmzzk
+                                  newWindow: true
+                              onTextChanged:
+                                - id: pzvo59d1ck
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: INPUT_WIDGET
+                              widgetId: ne9qj630m5
+                              widgetName: Input11
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: j2x2hz6nez
+                              text: New Event
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: u4nkokpz6h
+                              widgetName: Text13
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              onClick:
+                                - direction: close
+                                  id: oy3mjpr2gp
+                                  name: Modal1
+                                  type: controlModal
+                              parentId: j2x2hz6nez
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 43
+                              type: BUTTON_WIDGET
+                              widgetId: or03iafah3
+                              widgetName: Button6
+                              width:
+                                mode: gridUnit
+                                value: 23
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 4
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 73
+                              onClick:
+                                - apiNames:
+                                    - createEvent
+                                  id: evcw3jxlez
+                                  newWindow: true
+                                  onSuccess:
+                                    - id: 2igty4vfh2
+                                      newWindow: true
+                                  type: executeApi
+                              parentId: j2x2hz6nez
+                              text: Confirm
+                              top:
+                                mode: gridUnit
+                                value: 43
+                              type: BUTTON_WIDGET
+                              widgetId: ladx2wom8q
+                              widgetName: Button7
+                              width:
+                                mode: gridUnit
+                                value: 23
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 12
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 49
+                              parentId: j2x2hz6nez
+                              text: Date
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 9
+                              type: TEXT_WIDGET
+                              widgetId: t69bpgqihh
+                              widgetName: Text14
+                              width:
+                                mode: gridUnit
+                                value: 12
+                            - animateLoading: true
+                              dateFormat: YYYY/MM/DD HH:mm
+                              datePickerType: DATE_PICKER
+                              defaultDate: "{{moment().startOf('isoWeek').add(6, 'day').add(19,'hour')}}"
+                              dynamicBindingPathList:
+                                - key: defaultDate
+                              dynamicPropertyPathList:
+                                - key: defaultDate
+                              dynamicTriggerPathList:
+                                - key: onDateSelected
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              onDateSelected:
+                                - id: 6hzctgmk6t
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              top:
+                                mode: gridUnit
+                                value: 11
+                              type: DATE_PICKER_WIDGET
+                              widgetId: l7vab1oyo5
+                              widgetName: DatePicker2
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{eventsLookup.response[0].event}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 96
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Event Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: 5ilkbidk80
+                                  newWindow: true
+                              onFocusOut:
+                                - id: nnz1oexw6j
+                                  newWindow: true
+                              onSubmit:
+                                - id: d76i9oq9im
+                                  newWindow: true
+                              onTextChanged:
+                                - id: fgx9dyo4e5
+                                  newWindow: true
+                              parentId: j2x2hz6nez
+                              placeholderText: ""
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: s2tfs7l79m
+                              widgetName: Input12
+                              width:
+                                mode: gridUnit
+                                value: 96
+                            - allowedFileTypes: |-
+                                [
+                                  ".jpg",".HEIC"
+                                ]
+                              animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              files: []
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 19
+                              isLoading: false
+                              isRequired: true
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: j2x2hz6nez
+                              selectionType: 1
+                              top:
+                                mode: gridUnit
+                                value: 17
+                              type: FILE_PICKER_WIDGET
+                              widgetId: nivpwa9tmh
+                              widgetName: FilePicker2
+                              width:
+                                mode: gridUnit
+                                value: 48
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 48
+                              height:
+                                mode: gridUnit
+                                value: 2
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              parentId: j2x2hz6nez
+                              text: |
+                                Background
+                              textAlign: LEFT
+                              textStyle: LABEL
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 15
+                              type: TEXT_WIDGET
+                              verticalAlign: AUTO
+                              widgetId: 2z32zm9emb
+                              widgetName: Text15
+                              width:
+                                mode: gridUnit
+                                value: 48
+                          collapseWhenHidden: false
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 47
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 564
+                          parentId: 6ogr4mv6a0
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: j2x2hz6nez
+                          widgetName: Canvas15
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: fitContent
+                        value: 49
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      minHeight:
+                        mode: gridUnit
+                        value: 47
+                      parentId: qjn6xy8piw
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 6ogr4mv6a0
+                      widgetName: Section7
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: LARGE
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  onClose:
+                    - id: vtxah7upec
+                      newWindow: true
+                  onOpen:
+                    - id: p151hh9443
+                      newWindow: true
+                  parentId: d785gqn31l
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 2
+                  type: MODAL_WIDGET
+                  widgetId: qjn6xy8piw
+                  widgetName: Modal2
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: LARGE
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 95
+                              height:
+                                mode: gridUnit
+                                value: 11
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Dietary Restrictions.
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: zs10uv1hp7
+                                  newWindow: true
+                              onFocusOut:
+                                - id: vstthdjm6j
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 17rh3tb05l
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 8
+                              type: INPUT_WIDGET
+                              widgetId: djf8qohuxt
+                              widgetName: Input13
+                              width:
+                                mode: gridUnit
+                                value: 95
+                            - animateLoading: true
+                              customErrorMessage: e.164 format please.
+                              customValidationRule: "{{/^\\+[1-9]\\d{1,14}$/.test(createNewAttendeePhone.valu\
+                                e)}}"
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: customValidationRule
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Phone Number
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              onFocus:
+                                - id: qr85ax7dp2
+                                  newWindow: true
+                              onFocusOut:
+                                - id: vx5oyxxa58
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 17rh3tb05l
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 3
+                              type: INPUT_WIDGET
+                              widgetId: gl7igvhww1
+                              widgetName: Input14
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: ""
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                                - key: onFocus
+                                - key: onFocusOut
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onFocus:
+                                - id: dkcqrm750d
+                                  newWindow: true
+                              onFocusOut:
+                                - id: ui4jdcmq9x
+                                  newWindow: true
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: 17rh3tb05l
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 3
+                              type: INPUT_WIDGET
+                              widgetId: yusk3zv5c3
+                              widgetName: Input15
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: 17rh3tb05l
+                              text: Invite New Friend
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: 8f3b30ukcn
+                              widgetName: Text16
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              gridColumns: 20
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 53
+                              onClick:
+                                - direction: close
+                                  id: sjagj4ke9m
+                                  name: Modal2
+                                  type: controlModal
+                              parentId: 17rh3tb05l
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 19
+                              type: BUTTON_WIDGET
+                              widgetId: m6pxs93gyx
+                              widgetName: Button8
+                              width:
+                                mode: gridUnit
+                                value: 20
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList:
+                                - key: isDisabled
+                              dynamicPropertyPathList:
+                                - key: isDisabled
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 20
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: "{{!createNewAttendeePhone.isValid}}"
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 74
+                              onClick:
+                                - apiNames:
+                                    - createAttendee
+                                  id: zl6k3pykzs
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: r6haq413nu
+                                      name: newAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: 17rh3tb05l
+                              text: Confirm
+                              top:
+                                mode: gridUnit
+                                value: 19
+                              type: BUTTON_WIDGET
+                              widgetId: fqa9qq427o
+                              widgetName: Button9
+                              width:
+                                mode: gridUnit
+                                value: 20
+                          collapseWhenHidden: false
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 22
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: 3ytz90wlwo
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: 17rh3tb05l
+                          widgetName: Canvas16
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: fitContent
+                        value: 22
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: yc87as8uzq
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 3ytz90wlwo
+                      widgetName: Section8
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: SMALL
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 13
+                  onClose:
+                    - id: qtjyxt15vj
+                      newWindow: true
+                  onOpen:
+                    - id: qsyjfkztau
+                      newWindow: true
+                  parentId: d785gqn31l
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 2
+                  type: MODAL_WIDGET
+                  widgetId: yc87as8uzq
+                  widgetName: Modal3
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: SMALL
+                - canOutsideClickClose: true
+                  children:
+                    - canExtend: true
+                      children:
+                        - backgroundColor: none
+                          canExtend: true
+                          children:
+                            - animateLoading: true
+                              backgroundColor: "#F45252"
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 24
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 46
+                              onClick:
+                                - apiNames:
+                                    - deleteAttendee
+                                  id: rm5k7mctdw
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: ngwzyly2j4
+                                      name: updateAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: v483wnfrsm
+                              text: Delete
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: 0u9fh5oc0f
+                              widgetName: Button10
+                              width:
+                                mode: gridUnit
+                                value: 24
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.dietary_restrictions}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 95
+                              height:
+                                mode: gridUnit
+                                value: 11
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Dietary Restrictions.
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: v483wnfrsm
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 10
+                              type: INPUT_WIDGET
+                              widgetId: ax8m83luyr
+                              widgetName: Input16
+                              width:
+                                mode: gridUnit
+                                value: 95
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.phone}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Phone Number
+                              left:
+                                mode: gridUnit
+                                value: 48
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: v483wnfrsm
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: 5fp56v9zk0
+                              widgetName: Input17
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.attendee}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 47
+                              height:
+                                mode: gridUnit
+                                value: 5
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: true
+                              isVisible: true
+                              label: Name
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onSubmit:
+                                - id: a3nbxbhjc3
+                                  newWindow: true
+                              onTextChanged:
+                                - id: kqp95zu8ye
+                                  newWindow: true
+                              parentId: v483wnfrsm
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 4
+                              type: INPUT_WIDGET
+                              widgetId: aqynh23wns
+                              widgetName: Input18
+                              width:
+                                mode: gridUnit
+                                value: 47
+                            - animateLoading: true
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList: []
+                              gridColumns: 91
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              parentId: v483wnfrsm
+                              text: Update Attendee
+                              textAlign: LEFT
+                              textStyle: HEADING_2
+                              textType: text
+                              top:
+                                mode: gridUnit
+                                value: 0
+                              type: TEXT_WIDGET
+                              widgetId: z9f2t1orlq
+                              widgetName: Text17
+                              width:
+                                mode: gridUnit
+                                value: 91
+                            - animateLoading: true
+                              buttonStyle: SECONDARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick[0].name
+                              gridColumns: 23
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 26
+                              onClick:
+                                - direction: close
+                                  id: qvtl8knwoj
+                                  name: updateAttendeeModal
+                                  type: controlModal
+                              parentId: v483wnfrsm
+                              text: Cancel
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: mrfqgufghc
+                              widgetName: Button11
+                              width:
+                                mode: gridUnit
+                                value: 19
+                            - animateLoading: true
+                              buttonStyle: PRIMARY_BUTTON
+                              docsUrl: https://docs.superblocks.com/components/button
+                              dynamicBindingPathList: []
+                              dynamicTriggerPathList:
+                                - key: onClick
+                              gridColumns: 24
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isDefaultClickDisabled: true
+                              isDisabled: false
+                              isLoading: false
+                              isVisible: true
+                              left:
+                                mode: gridUnit
+                                value: 71
+                              onClick:
+                                - apiNames: []
+                                  id: rm5k7mctdw
+                                  newWindow: true
+                                  onSuccess:
+                                    - apiNames:
+                                        - selectedEventLookup
+                                      direction: close
+                                      id: ngwzyly2j4
+                                      name: updateAttendeeModal
+                                      newWindow: true
+                                      type: controlModal
+                                  type: executeApi
+                              parentId: v483wnfrsm
+                              text: Update
+                              top:
+                                mode: gridUnit
+                                value: 27
+                              type: BUTTON_WIDGET
+                              widgetId: iqahnhfnpz
+                              widgetName: Button12
+                              width:
+                                mode: gridUnit
+                                value: 24
+                            - animateLoading: true
+                              defaultCheckedState: "{{Attendee_Table.selectedRow.invited}}"
+                              dynamicBindingPathList:
+                                - key: defaultCheckedState
+                              dynamicPropertyPathList:
+                                - key: defaultCheckedState
+                              dynamicTriggerPathList:
+                                - key: onCheckChange
+                              gridColumns: 16
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              isLoading: false
+                              isVisible: true
+                              label: Invited
+                              left:
+                                mode: gridUnit
+                                value: 0
+                              onCheckChange:
+                                - id: u8zccy2qkz
+                                  newWindow: true
+                              parentId: v483wnfrsm
+                              top:
+                                mode: gridUnit
+                                value: 22
+                              type: CHECKBOX_WIDGET
+                              widgetId: 4h07ujz7pj
+                              widgetName: Checkbox1
+                              width:
+                                mode: gridUnit
+                                value: 16
+                            - animateLoading: true
+                              defaultText: "{{Attendee_Table.selectedRow.id}}"
+                              docsUrl: https://docs.superblocks.com/components/input
+                              dynamicBindingPathList:
+                                - key: defaultText
+                              dynamicTriggerPathList:
+                                - key: onTextChanged
+                                - key: onSubmit
+                              gridColumns: 76
+                              height:
+                                mode: gridUnit
+                                value: 3
+                              inputType: TEXT
+                              isLoading: false
+                              isVertical: false
+                              isVisible: true
+                              label: ""
+                              left:
+                                mode: gridUnit
+                                value: 19
+                              onSubmit:
+                                - id: vptkjcpu3u
+                                  newWindow: true
+                              onTextChanged:
+                                - id: 770gyol8b3
+                                  newWindow: true
+                              parentId: v483wnfrsm
+                              placeholderText: Enter text
+                              top:
+                                mode: gridUnit
+                                value: 22
+                              type: INPUT_WIDGET
+                              widgetId: obzfk52bmc
+                              widgetName: Input19
+                              width:
+                                mode: gridUnit
+                                value: 76
+                          collapseWhenHidden: false
+                          detachFromLayout: true
+                          dynamicBindingPathList: []
+                          dynamicTriggerPathList: []
+                          gridColumns: 96
+                          height:
+                            mode: gridUnit
+                            value: 31
+                          isDisabled: false
+                          isInModal: true
+                          isLoading: false
+                          isVisible: true
+                          layout: FIXED_GRID
+                          left:
+                            mode: gridUnit
+                            value: 0
+                          minHeight:
+                            mode: px
+                            value: 352
+                          parentId: 4aj5lla78n
+                          shouldScrollContents: false
+                          top:
+                            mode: gridUnit
+                            value: 0
+                          type: CANVAS_WIDGET
+                          widgetId: v483wnfrsm
+                          widgetName: Canvas17
+                          width:
+                            mode: gridUnit
+                            value: 0
+                      detachFromLayout: true
+                      dragDisabled: true
+                      gridColumns: 96
+                      height:
+                        mode: fitContent
+                        value: 31
+                      isLoading: true
+                      isVisible: true
+                      left:
+                        mode: gridUnit
+                        value: 0
+                      parentId: ogtrho115h
+                      shouldScrollContents: true
+                      top:
+                        mode: gridUnit
+                        value: 0
+                      type: SECTION_WIDGET
+                      widgetId: 4aj5lla78n
+                      widgetName: Section9
+                      width:
+                        mode: gridUnit
+                        value: 0
+                  detachFromLayout: true
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onOpen
+                    - key: onClose
+                  gridColumns: 12
+                  hasBackdrop: true
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  heightPreset: MEDIUM
+                  isLoading: false
+                  left:
+                    mode: gridUnit
+                    value: 20
+                  onClose:
+                    - apiNames: []
+                      id: g44b5p8bis
+                      newWindow: true
+                      propertyName: allChildren
+                      type: resetComponent
+                      widget:
+                        id: qvtl8knwoj
+                        name: updateAttendeeModal
+                        type: MODAL_WIDGET
+                  onOpen:
+                    - id: fma48md0uo
+                      newWindow: true
+                  parentId: d785gqn31l
+                  shouldScrollContents: true
+                  top:
+                    mode: gridUnit
+                    value: 66
+                  type: MODAL_WIDGET
+                  widgetId: ogtrho115h
+                  widgetName: Modal4
+                  width:
+                    mode: gridUnit
+                    value: 12
+                  widthPreset: SMALL
+              collapseWhenHidden: false
+              detachFromLayout: true
+              distribution: TOP
+              dynamicBindingPathList: []
+              dynamicTriggerPathList: []
+              gridColumns: 72
+              height:
+                mode: fitContent
+                value: 23
+              isVisible: true
+              layout: VSTACK
+              left:
+                mode: gridUnit
+                value: 0
+              minHeight:
+                mode: px
+                value: 1292
+              parentId: anirrpte0t
+              spacing:
+                mode: px
+                value: 12
+              top:
+                mode: gridUnit
+                value: 0
+              type: CANVAS_WIDGET
+              widgetId: d785gqn31l
+              widgetName: Canvas13
+              width:
+                mode: gridUnit
+                value: 72
+            - alignment: STRETCH
+              appMode: EDIT
+              canExtend: true
+              children:
+                - animateLoading: true
+                  defaultOptionValue: "{{Global.profiles.selected.id}}"
+                  dynamicBindingPathList:
+                    - key: options
+                    - key: defaultOptionValue
+                  dynamicTriggerPathList:
+                    - key: onOptionChange
+                    - key: onClear
+                    - key: onSearchTextChange
+                  gridColumns: 24
+                  height:
+                    mode: gridUnit
+                    value: 6
+                  isLoading: false
+                  isRequired: false
+                  isVertical: true
+                  isVisible: true
+                  label: Site
+                  left:
+                    mode: gridUnit
+                    value: 3
+                  onClear:
+                    - id: 4lf5gtft4r
+                      newWindow: true
+                  onOptionChange:
+                    - apiNames:
+                        - selectedEventLookup
+                      id: thwpdw8unw
+                      newWindow: true
+                      profileId: "{{profileMode.selectedOptionValue}}"
+                      type: setProfile
+                    - apiNames:
+                        - eventsLookup
+                        - selectedEventLookup
+                        - rsvpCounts
+                        - attendeesLookup
+                      id: 5o974at0hx
+                      newWindow: true
+                      type: executeApi
+                  onSearchTextChange:
+                    - id: 22bb7rbl82
+                  options: "{{Global.profiles.available}}"
+                  parentId: 494cpizaxl
+                  placeholderText: Select an option
+                  top:
+                    mode: gridUnit
+                    value: 10
+                  transformation:
+                    label: displayName
+                    value: id
+                  type: DROP_DOWN_WIDGET
+                  widgetId: hl1wxwde4y
+                  widgetName: Dropdown1
+                  width:
+                    mode: gridUnit
+                    value: 24
+                - animateLoading: false
+                  defaultImage: https://res.cloudinary.com/drako999/image/upload/v1589196259/default.png
+                  dynamicBindingPathList:
+                    - key: image
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  fillContainer: true
+                  gridColumns: 24
+                  height:
+                    mode: gridUnit
+                    value: 4
+                  image: "{{URLGenerate.response}}"
+                  imageShape: RECTANGLE
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 0
+                  maxZoomLevel: 1
+                  onClick:
+                    - apiNames:
+                        - URLGenerate
+                      id: vc4hw8nllo
+                      newWindow: true
+                      type: navigateTo
+                      url: https://app.netlify.com/sites/shyparty/deploys
+                  parentId: 494cpizaxl
+                  top:
+                    mode: gridUnit
+                    value: 7
+                  type: IMAGE_WIDGET
+                  widgetId: xrkg4djp56
+                  widgetName: Image2
+                  width:
+                    mode: gridUnit
+                    value: 24
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 24
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: sdk
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 38
+                  onClick:
+                    - apiNames:
+                        - rebuildShyParty
+                      id: 9h7rnc1r2z
+                      newWindow: true
+                      onSuccess:
+                        - apiNames: []
+                          id: mbopyr1hg5
+                          newWindow: true
+                          type: navigateTo
+                          url: https://app.netlify.com/sites/shyparty/deploys
+                        - apiNames:
+                            - API1
+                          id: e7vg81nv1a
+                          name: generateURL
+                          newWindow: true
+                          type: controlTimer
+                      type: executeApi
+                    - apiNames:
+                        - selectedEventLookup
+                      id: 8ben8nt7ij
+                      name: updateBuildStatus
+                      newWindow: true
+                      type: controlTimer
+                  parentId: 494cpizaxl
+                  text: Trigger Deploy
+                  top:
+                    mode: gridUnit
+                    value: 10
+                  type: BUTTON_WIDGET
+                  widgetId: stzf1roybi
+                  widgetName: Button13
+                  width:
+                    mode: gridUnit
+                    value: 24
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 24
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: calendar_add_on
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 38
+                  onClick:
+                    - direction: open
+                      id: c0hyru053s
+                      name: createNewEventModal
+                      type: controlModal
+                  parentId: 494cpizaxl
+                  text: Create New Event
+                  top:
+                    mode: gridUnit
+                    value: 14
+                  type: BUTTON_WIDGET
+                  widgetId: jbugmd0yyc
+                  widgetName: Button14
+                  width:
+                    mode: gridUnit
+                    value: 24
+                - animateLoading: true
+                  buttonStyle: PRIMARY_BUTTON
+                  docsUrl: https://docs.superblocks.com/components/button
+                  dynamicBindingPathList: []
+                  dynamicTriggerPathList:
+                    - key: onClick
+                  gridColumns: 24
+                  height:
+                    mode: gridUnit
+                    value: 3
+                  icon: person_add
+                  isDefaultClickDisabled: true
+                  isDisabled: false
+                  isLoading: false
+                  isVisible: true
+                  left:
+                    mode: gridUnit
+                    value: 38
+                  onClick:
+                    - direction: open
+                      id: e3d2p1x6cd
+                      name: newAttendeeModal
+                      type: controlModal
+                  parentId: 494cpizaxl
+                  text: Invite new friend
+                  top:
+                    mode: gridUnit
+                    value: 18
+                  type: BUTTON_WIDGET
+                  widgetId: 80umwgj01u
+                  widgetName: Button15
+                  width:
+                    mode: gridUnit
+                    value: 24
+              collapseWhenHidden: true
+              detachFromLayout: true
+              distribution: TOP
+              dynamicBindingPathList: []
+              dynamicTriggerPathList: []
+              gridColumns: 24
+              height:
+                mode: fitContent
+                value: 23
+              isLoading: false
+              isVisible: true
+              layout: VSTACK
+              left:
+                mode: gridUnit
+                value: 0
+              parentId: anirrpte0t
+              shouldScrollContents: true
+              spacing:
+                mode: px
+                value: 12
+              top:
+                mode: gridUnit
+                value: 0
+              type: CANVAS_WIDGET
+              widgetId: 494cpizaxl
+              widgetName: Canvas18
+              width:
+                mode: gridUnit
+                value: 24
+          detachFromLayout: true
+          dragDisabled: true
+          dynamicBindingPathList: []
+          dynamicTriggerPathList: []
+          gridColumns: 96
+          height:
+            mode: fitContent
+            value: 24.833333333333332
+          isLoading: false
+          isVisible: true
+          left:
+            mode: gridUnit
+            value: 0
+          parentId: "0"
+          shouldScrollContents: true
+          stackColumnsAt:
+            mode: px
+            value: 768
+          top:
+            mode: gridUnit
+            value: 0
+          type: SECTION_WIDGET
+          widgetId: anirrpte0t
+          widgetName: Section5
+          width:
+            mode: gridUnit
+            value: 96
       detachFromLayout: true
       dynamicBindingPathList: []
+      dynamicTriggerPathList: []
       events:
         eventMap: {}
       gridColumns: 96
       height:
         mode: gridUnit
         value: 99
-      layoutVersion: 5
+      layoutVersion: 6
       left:
         mode: gridUnit
         value: 0
@@ -4345,6 +7012,22 @@ layouts:
       minWidth:
         mode: px
         value: 840
+      onPageLoad:
+        - id: i7lzugd2o5
+          type: optimizedPageLoadApis
+      padding:
+        bottom:
+          mode: px
+          value: 0
+        left:
+          mode: px
+          value: 0
+        right:
+          mode: px
+          value: 0
+        top:
+          mode: px
+          value: 0
       stateVars:
         stateVarMap:
           b2c348d6-4473-4d2e-bdf2-fcba500154d7:
