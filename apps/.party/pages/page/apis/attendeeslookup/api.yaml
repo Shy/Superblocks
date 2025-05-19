@@ -49,29 +49,8 @@ blocks:
     step:
       integration: python
       python:
-        body: "outputArray = []
-
-          outputDict  = {}
-
-
-          for attendee in sqlQueries.output.getAttendees:
-
-          \    if attendee.attendee:
-
-          \        outputDict = attendee
-
-          \        outputDict['attendeecount']
-          =     int(outputDict['attendeecount'])/
-          int(sqlQueries.output.getEventCount[0].count)
-
-          \        outputArray.append(outputDict)
-
-          outputArray.sort(key=lambda x: (-x['invited'],
-          -x['attendeecount']))
-
-          return outputArray
-
-          \ "
+        body:
+          path: ./formatdata.py
         superblocksMetadata:
           pluginVersion: 0.0.7
 metadata:
