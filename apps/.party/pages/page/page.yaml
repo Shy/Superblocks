@@ -743,11 +743,11 @@ layouts:
         - backgroundColor: ""
           canExtend: true
           children:
-            - alignment: CENTER
+            - alignment: STRETCH
               backgroundColor: none
               canExtend: true
               children:
-                - animateLoading: false
+                - animateLoading: true
                   columnOrder:
                     - id
                     - public_id
@@ -1177,7 +1177,7 @@ layouts:
                   widgetId: m4akx1mjmw
                   widgetName: Event_Table
                   width:
-                    mode: fillParent
+                    mode: gridUnit
                     value: 72
                 - canOutsideClickClose: true
                   children:
@@ -1208,7 +1208,6 @@ layouts:
                               left:
                                 mode: gridUnit
                                 value: 49
-                              maxLength: "131"
                               onFocus:
                                 - id: 6z3jsfobwt
                                   newWindow: true
@@ -1254,7 +1253,6 @@ layouts:
                               left:
                                 mode: gridUnit
                                 value: 0
-                              maxLength: "131"
                               onFocus:
                                 - id: rqwtzjk8ep
                                   newWindow: true
@@ -1300,7 +1298,6 @@ layouts:
                               left:
                                 mode: gridUnit
                                 value: 0
-                              maxLength: "256"
                               onFocus:
                                 - id: ig9sq6pk04
                                   newWindow: true
@@ -1732,7 +1729,7 @@ layouts:
                       gridColumns: 96
                       height:
                         mode: fitContent
-                        value: 49
+                        value: 47.833333333333336
                       isLoading: true
                       isVisible: true
                       left:
@@ -1777,7 +1774,7 @@ layouts:
                   shouldScrollContents: true
                   top:
                     mode: gridUnit
-                    value: 0
+                    value: 23.5
                   type: MODAL_WIDGET
                   widgetId: suu6ptvk7q
                   widgetName: eventModal
@@ -2347,7 +2344,7 @@ layouts:
                   shouldScrollContents: true
                   top:
                     mode: gridUnit
-                    value: 2
+                    value: 24
                   type: MODAL_WIDGET
                   widgetId: oy3mjpr2gp
                   widgetName: createNewEventModal
@@ -2665,7 +2662,7 @@ layouts:
                   isLoading: false
                   left:
                     mode: gridUnit
-                    value: 13
+                    value: 0
                   onClose:
                     - id: qtjyxt15vj
                       newWindow: true
@@ -2676,7 +2673,7 @@ layouts:
                   shouldScrollContents: true
                   top:
                     mode: gridUnit
-                    value: 2
+                    value: 27.5
                   type: MODAL_WIDGET
                   widgetId: sjagj4ke9m
                   widgetName: newAttendeeModal
@@ -3079,7 +3076,7 @@ layouts:
                   isLoading: false
                   left:
                     mode: gridUnit
-                    value: 20
+                    value: 0
                   onClose:
                     - apiNames: []
                       id: g44b5p8bis
@@ -3097,7 +3094,7 @@ layouts:
                   shouldScrollContents: true
                   top:
                     mode: gridUnit
-                    value: 66
+                    value: 31
                   type: MODAL_WIDGET
                   widgetId: qvtl8knwoj
                   widgetName: updateAttendeeModal
@@ -3115,13 +3112,26 @@ layouts:
                 mode: fitContent
                 value: 23
               isVisible: true
-              layout: VSTACK
+              layout: FIXED_GRID
               left:
                 mode: gridUnit
                 value: 0
               minHeight:
                 mode: px
                 value: 1292
+              padding:
+                bottom:
+                  mode: px
+                  value: 11
+                left:
+                  mode: px
+                  value: 16
+                right:
+                  mode: px
+                  value: 16
+                top:
+                  mode: px
+                  value: 11
               parentId: lm2jrimm2x
               spacing:
                 mode: px
@@ -3398,7 +3408,7 @@ layouts:
           shouldScrollContents: true
           stackColumnsAt:
             mode: px
-            value: 768
+            value: 480
           top:
             mode: gridUnit
             value: 0
